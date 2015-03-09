@@ -1,0 +1,19 @@
+
+<!-- Carousel -->
+<div class="reel">
+    {foreach from=$children item=Child}
+    <article>
+        <a href="{url site=$Child}" class="image featured">
+            {image src=$Child->getAttribute('image_site') width=400}
+        </a>
+        <header>
+            <h3>
+                <a href="{url site=$Child}">
+                    {$Child->getAttribute('title')}
+                </a>
+            </h3>
+        </header>
+        <p>{text_passage text=$Child->getAttribute('short') start=0 end=120 striphtml=true append="..."}</p>
+    </article>
+    {/foreach}
+</div>

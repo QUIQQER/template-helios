@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <bricks>
+
+        <!-- new available bricks -->
+        <brick control="\QUI\TemplateHelios\Controls\StartpageCarousel">
+            <title>
+                <locale group="quiqqer/template-helios"
+                        var="bricks.StartpageCarousel.title"
+                />
+            </title>
+            <description>
+                <locale group="quiqqer/template-helios"
+                        var="bricks.StartpageCarousel.description"
+                />
+            </description>
+            <settings>
+                <setting name="limit" type="number">
+                    <locale group="quiqqer/template-helios"
+                            var="StartpageCarousel.limit"
+                    />
+                </setting>
+                <setting name="sitetypes" data-qui="controls/projects/project/site/Select">
+                    <locale group="quiqqer/template-helios"
+                            var="StartpageCarousel.sitetypes"
+                    />
+                </setting>
+            </settings>
+        </brick>
+
+
+
+
+
+        <!-- defined areas in the template -->
+        <templateAreas>
+            <!-- global areas -->
+            <areas>
+                <area name="footer" inheritance="1">
+                    <title>
+                        <locale group="quiqqer/template-helios"
+                                var="area.footer.left.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-helios"
+                                var="area.footer.left.description"
+                        />
+                    </description>
+                </area>
+            </areas>
+
+            <!-- specific type areas -->
+            <layouts>
+
+                <layout layout="layout/startpage">
+                    <area name="startpageContent">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.startpageContent.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.startpageContent.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/leftSidebar">
+                    <area name="leftSidebar" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.sidebar.left.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.sidebar.left.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+                <layout layout="layout/rightSidebar">
+                    <area name="rightSidebar" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.sidebar.right.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.sidebar.right.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+                <layout layout="layout/noSidebar">
+                    <area name="noSidebar" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.sidebar.no.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.sidebar.no.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+            </layouts>
+        </templateAreas>
+    </bricks>
+
+</quiqqer>

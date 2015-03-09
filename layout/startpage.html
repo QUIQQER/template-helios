@@ -1,0 +1,19 @@
+
+{strip}
+{object class="\QUI\Bricks\Manager" assign=BricksManager}
+{assign var=bricks value=$BricksManager->getBricksByArea('startpageContent', $Site)}
+
+{foreach from=$bricks item=Brick}
+    {if $Brick->getType() == 'QUI\TemplateHelios\Controls\StartpageCarousel'}
+        {$Brick->create()}
+    {else}
+    <section class="wrapper style1">
+        <div class="container">
+            {$Brick->create()}
+        </div>
+    </section>
+    {/if}
+{/foreach}
+{/strip}
+
+{$Template->getBody()}
