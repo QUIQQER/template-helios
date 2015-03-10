@@ -21,8 +21,8 @@
         </locale>
 
         <locale name="area.startpageContent.title">
-            <de><![CDATA[Template: Helios - Layout: Startseite-Inhalt]]></de>
-            <en><![CDATA[Template: Helios - Layout: Startpage content]]></en>
+            <de><![CDATA[Template: Helios - Inhalt]]></de>
+            <en><![CDATA[Template: Helios - Content]]></en>
         </locale>
         <locale name="area.startpageContent.description">
             <de><![CDATA[Inhaltsbereich eines Startseiten Layouts]]></de>
@@ -30,8 +30,8 @@
         </locale>
 
         <locale name="area.sidebar.left.title">
-            <de><![CDATA[Template: Helios - Layout: Links]]></de>
-            <en><![CDATA[Template: Helios - Layout: Left]]></en>
+            <de><![CDATA[Template: Helios - Linke Sidebar]]></de>
+            <en><![CDATA[Template: Helios - Left sidebar]]></en>
         </locale>
         <locale name="area.sidebar.left.description">
             <de><![CDATA[]]></de>
@@ -39,8 +39,8 @@
         </locale>
 
         <locale name="area.sidebar.right.title">
-            <de><![CDATA[Template: Helios - Layout: Rechts]]></de>
-            <en><![CDATA[Template: Helios - Layout: Right]]></en>
+            <de><![CDATA[Template: Helios - Rechte Sidebar]]></de>
+            <en><![CDATA[Template: Helios - Right sidebar]]></en>
         </locale>
         <locale name="area.sidebar.right.description">
             <de><![CDATA[]]></de>
@@ -48,8 +48,8 @@
         </locale>
 
         <locale name="area.sidebar.no.title">
-            <de><![CDATA[Template: Helios - Layout: Einspaltig]]></de>
-            <en><![CDATA[Template: Helios - Layout: One column]]></en>
+            <de><![CDATA[Template: Helios - Inhalt]]></de>
+            <en><![CDATA[Template: Helios - Content]]></en>
         </locale>
         <locale name="area.sidebar.no.description">
             <de><![CDATA[]]></de>

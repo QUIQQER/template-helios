@@ -17,29 +17,29 @@
     {assign var=Start value=$Project->firstChild()}
 
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <!--
-    <script src="{$URL_TPL_DIR}bin/js/jquery.min.js"></script>
-    <script src="{$URL_TPL_DIR}bin/js/jquery.dropotron.min.js"></script>
-    <script src="{$URL_TPL_DIR}bin/js/jquery.scrolly.min.js"></script>
-    <script src="{$URL_TPL_DIR}bin/js/jquery.onvisible.min.js"></script>
-    <script src="{$URL_TPL_DIR}bin/js/skel.min.js"></script>
-    <script src="{$URL_TPL_DIR}bin/js/skel-layers.min.js"></script>
-    <script src="{$URL_TPL_DIR}bin/js/init.js"></script>
-    -->
 
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/skel.css" />
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css" />
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style-startpage.css" />
+    <link href="{$URL_TPL_DIR}bin/css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+
+    <link href="{$URL_TPL_DIR}bin/css/unsemantic/unsemantic-grid-responsive.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+
+    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/preload.css" />
 
     <noscript>
+        <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/skel.css" />
+        <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css" />
+        <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style-desktop.css" />
         <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style-noscript.css" />
     </noscript>
+
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/ie/v8.css" />
     <![endif]-->
-
-    <script src="{$URL_TPL_DIR}bin/js/jquery.min.js"></script>
-    <script src="{$URL_TPL_DIR}bin/js/helios.js"></script>
 
 </head>
 <body class="{$bodyClass}">
@@ -110,6 +110,9 @@
         </div>
     </div>
 </div>
+
+<script src="{$URL_TPL_DIR}bin/js/jquery.min.js"></script>
+<script src="{$URL_TPL_DIR}bin/js/helios.js"></script>
 
 </body>
 </html>

@@ -30,7 +30,7 @@
 	skel.init({
 		reset: 'full',
 		breakpoints: {
-			global:	{
+            global:	{
                 range: '*',
                 href: URL_TEMPLATE_DIR +'bin/css/style.css',
                 containers: 1400,
@@ -40,12 +40,12 @@
             },
 			wide:		{
                 range: '-1680',
-                href: URL_TEMPLATE_DIR +'bin/style-wide.css',
+                href: URL_TEMPLATE_DIR +'bin/css/style-wide.css',
                 containers: 1200
             },
 			normal:	{
                 range: '-1280',
-                href: URL_TEMPLATE_DIR +'bin/style-normal.css',
+                href: URL_TEMPLATE_DIR +'bin/css/style-normal.css',
                 containers: '100%',
                 grid: {
                     gutters: 36
@@ -53,14 +53,14 @@
             },
 			narrow:	{
                 range: '-960',
-                href: URL_TEMPLATE_DIR +'bin/style-narrow.css',
+                href: URL_TEMPLATE_DIR +'bin/css/style-narrow.css',
                 grid: {
                     gutters: 32
                 }
             },
 			narrower: {
                 range: '-840',
-                href: URL_TEMPLATE_DIR +'bin/style-narrower.css',
+                href: URL_TEMPLATE_DIR +'bin/css/style-narrower.css',
                 containers: '100%!',
                 grid: {
                     collapse: true
@@ -68,7 +68,7 @@
             },
 			mobile:	{
                 range: '-736',
-                href: URL_TEMPLATE_DIR +'bin/style-mobile.css',
+                href: URL_TEMPLATE_DIR +'bin/css/style-mobile.css',
                 grid: {
                     gutters: 20
                 },
@@ -121,6 +121,25 @@
 			$window.on('load', function() {
 				$body.removeClass('is-loading');
 			});
+
+            $window.load(function()
+            {
+                var Loader = document.getElement( '#___body_loader' );
+
+                if ( !Loader ) {
+                    return;
+                }
+
+                $window.resize();
+
+                moofx( Loader ).animate({
+                    opacity: 0
+                }, {
+                    callback : function() {
+                        Loader.destroy();
+                    }
+                });
+            });
 
 		// CSS polyfills (IE<9).
 			if (skel.vars.IEVersion < 9)

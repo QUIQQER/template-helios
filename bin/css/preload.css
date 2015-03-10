@@ -1,4 +1,9 @@
 
+#nav a span,
+#header h1 a {
+    color: #fff;
+}
+
 .quiqqer-bricks-sidebox1,
 .quiqqer-bricks-sidebox2,
 .quiqqer-bricks-sidebox3, {

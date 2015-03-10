@@ -552,7 +552,8 @@
 				}
 
 	/* Button */
-		
+
+        .content-button,
 		input[type="button"],
 		input[type="submit"],
 		input[type="reset"],
@@ -988,6 +989,19 @@
 		{
 			margin-bottom: 0;
 		}
+
+        #content h1 {
+            font-size: 2.85em;
+        }
+
+        #content h1 {
+            margin: 0 0 1em;
+        }
+
+        #content h2,
+        #content h3 {
+            margin: 0 0 0.8em;
+        }
 		
 /*********************************************************************************/
 /* Sidebar                                                                       */
@@ -1105,4 +1119,39 @@
 .carousel .forward:after,
 .carousel .backward:after {
     background: url('images/arrow.svg') no-repeat center center;
+}
+
+
+
+/*********************************************************************************/
+/* QUIQQER Controls
+/*********************************************************************************/
+
+
+.quiqqer-sheets-desktop a,
+.quiqqer-sheets-desktop span {
+    border-radius: 3px !important;
+    color: #5d5d5d;
+    font-size: 0.8em;
+    line-height: 40px;
+    margin-right: 2px !important;
+    padding: 0 15px;
+}
+
+.quiqqer-sheets-desktop a:hover {
+    background: #df7366;
+    border: 1px solid #df7366 !important;
+    color: #fff;
+}
+
+.quiqqer-sheets-desktop-current {
+    background: #D9D6D7 !important;
+    border: 1px solid #D9D6D7 !important;
+    border-radius: 3px !important;
+    color: #231F20 !important;
+}
+
+.quiqqer-sheets-desktop-disabled {
+    color: #AAAAAA !important;
+    border-color: #DDDDDD !important;
 }

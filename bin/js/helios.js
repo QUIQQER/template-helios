@@ -3,6 +3,20 @@ document.addEvent('domready', function()
 {
     "use strict";
 
+    new Element('div', {
+        id : '___body_loader',
+        styles : {
+            background : '#f0f4f4',
+            height : '100%',
+            left : 0,
+            opacity: 1,
+            position : 'fixed',
+            top : 0,
+            width : '100%',
+            zIndex: 100
+        }
+    }).inject( document.body );
+
     window.addEvent('load', function() {
         window._loaded = true;
     });
@@ -40,6 +54,7 @@ require.config({
     }
 });
 
+
 require(['qui/QUI', 'helios-init' ], function()
 {
     "use strict";
@@ -51,9 +66,10 @@ require(['qui/QUI', 'helios-init' ], function()
         Next.set( 'id', String.uniqueID () );
     }
 
-    Header.getElement( '.scrolly' ).addEvent('click', function(event)
+    Header.getElements( '.scrolly' ).addEvent('click', function(event)
     {
         event.stop();
-        new Fx.Scroll( window).toElement( Next );
+        new Fx.Scroll( window ).toElement( Next );
     });
+
 });
