@@ -39,12 +39,12 @@
                 <area name="footer" inheritance="1">
                     <title>
                         <locale group="quiqqer/template-helios"
-                                var="area.footer.left.title"
+                                var="area.footer.title"
                         />
                     </title>
                     <description>
                         <locale group="quiqqer/template-helios"
-                                var="area.footer.left.description"
+                                var="area.footer.description"
                         />
                     </description>
                 </area>

@@ -1,0 +1,16 @@
+<div class="wrapper style1">
+    <div class="container">
+
+        <div class="row" id="content">
+            {$Template->getBody()}
+        </div>
+
+        {brickarea assign="bricks" area="rightSidebar" Site=$Site}
+        {foreach from=$bricks item=Brick}
+        <div class="row">
+            {$Brick->create()}
+        </div>
+        {/foreach}
+
+    </div>
+</div>

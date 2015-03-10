@@ -1062,11 +1062,18 @@
 			color: #fff;
 		}
 
+        #footer .quiqqer-bricks-banner {
+            background: transparent;
+            padding: 4.5em 0 0;
+        }
+
+        #footer .quiqqer-bricks-banner,
 		#footer .contact
 		{
 			text-align: center;
 		}
-		
+
+            #footer .quiqqer-bricks-banner p,
 			#footer .contact p
 			{
 				text-align: center;

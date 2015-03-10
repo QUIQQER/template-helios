@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+
+    <groups name="quiqqer/template-helios" datatype="php,js">
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Template: Helios]]></de>
+            <en><![CDATA[QUIQQER - Template: Helios]]></en>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[QUIQQER - Template: Helios]]></de>
+            <en><![CDATA[QUIQQER - Template: Helios]]></en>
+        </locale>
+
+        <locale name="area.footer.title">
+            <de><![CDATA[Template: Helios - Footer]]></de>
+            <en><![CDATA[Template: Helios - Footer]]></en>
+        </locale>
+        <locale name="area.footer.description">
+            <de><![CDATA[Footer Bereich]]></de>
+            <en><![CDATA[Footer Bereich]]></en>
+        </locale>
+
+        <locale name="area.startpageContent.title">
+            <de><![CDATA[Template: Helios - Layout: Startseite-Inhalt]]></de>
+            <en><![CDATA[Template: Helios - Layout: Startpage content]]></en>
+        </locale>
+        <locale name="area.startpageContent.description">
+            <de><![CDATA[Inhaltsbereich eines Startseiten Layouts]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+
+        <locale name="area.sidebar.left.title">
+            <de><![CDATA[Template: Helios - Layout: Links]]></de>
+            <en><![CDATA[Template: Helios - Layout: Left]]></en>
+        </locale>
+        <locale name="area.sidebar.left.description">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+
+        <locale name="area.sidebar.right.title">
+            <de><![CDATA[Template: Helios - Layout: Rechts]]></de>
+            <en><![CDATA[Template: Helios - Layout: Right]]></en>
+        </locale>
+        <locale name="area.sidebar.right.description">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+
+        <locale name="area.sidebar.no.title">
+            <de><![CDATA[Template: Helios - Layout: Einspaltig]]></de>
+            <en><![CDATA[Template: Helios - Layout: One column]]></en>
+        </locale>
+        <locale name="area.sidebar.no.description">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+    </groups>
+
+
+    <groups name="quiqqer/template-helios" datatype="php">
+
+        <locale name="continue.reading">
+            <de><![CDATA[weiterlesen]]></de>
+            <en><![CDATA[Continue reading]]></en>
+        </locale>
+        <locale name="startpage.start.button">
+            <de><![CDATA[Los gehts]]></de>
+            <en><![CDATA[Start]]></en>
+        </locale>
+
+        <locale name="admin.types.startpage">
+            <de><![CDATA[Layout - Startseite]]></de>
+            <en><![CDATA[Layout - startpage]]></en>
+        </locale>
+        <locale name="admin.types.leftSidebar">
+            <de><![CDATA[Layout - Linke Sidebar]]></de>
+            <en><![CDATA[Layout - Left sidebar]]></en>
+        </locale>
+        <locale name="admin.types.rightSidebar">
+            <de><![CDATA[Layout - Rechte Sidebar]]></de>
+            <en><![CDATA[Layout - Right sidebar]]></en>
+        </locale>
+        <locale name="admin.types.noSidebar">
+            <de><![CDATA[Layout - Keine Sidebar]]></de>
+            <en><![CDATA[Layout - No sidebar]]></en>
+        </locale>
+
+    </groups>
+
+</locales>
