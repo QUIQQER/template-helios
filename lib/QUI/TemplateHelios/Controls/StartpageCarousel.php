@@ -26,7 +26,7 @@ class StartpageCarousel extends QUI\Control
             'class'     => 'carousel',
             'limit'     => 10,
             'sitetypes' => false,
-            'nodeType'  => 'section'
+            'nodeName'  => 'section'
         ));
 
         parent::setAttributes( $attributes );

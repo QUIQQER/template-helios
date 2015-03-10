@@ -4,8 +4,26 @@
 {assign var=bricks value=$BricksManager->getBricksByArea('startpageContent', $Site)}
 
 {foreach from=$bricks item=Brick}
-    {if $Brick->getType() == 'QUI\TemplateHelios\Controls\StartpageCarousel'}
+
+    {if $Brick->getType() == 'QUI\TemplateHelios\Controls\StartpageCarousel' ||
+        $Brick->getType() == 'QUI\Bricks\Controls\Banner'
+    }
         {$Brick->create()}
+
+    {else if $Brick->getType() == 'QUI\Bricks\Controls\SideBox2'}
+    <div class="wrapper style1">
+        {assign var=_tmp value=$Brick->setAttribute( 'class', 'quiqqer-bricks-sidebox2 container special' )}
+        {assign var=_tmp value=$Brick->setAttribute( 'grid-class-article', '6u special' )}
+        {$Brick->create()}
+    </div>
+
+    {else if $Brick->getType() == 'QUI\Bricks\Controls\SideBox3'}
+    <div class="wrapper style1">
+        {assign var=_tmp value=$Brick->setAttribute( 'class', 'quiqqer-bricks-sidebox3 container special' )}
+        {assign var=_tmp value=$Brick->setAttribute( 'grid-class-article', '4u special' )}
+        {$Brick->create()}
+    </div>
+
     {else}
     <section class="wrapper style1">
         <div class="container">
@@ -13,6 +31,7 @@
         </div>
     </section>
     {/if}
+
 {/foreach}
 {/strip}
 

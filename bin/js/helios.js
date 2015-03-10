@@ -40,6 +40,20 @@ require.config({
     }
 });
 
-require(['qui/QUI', 'helios-init' ], function() {
+require(['qui/QUI', 'helios-init' ], function()
+{
     "use strict";
+
+    var Header = document.getElement( '#header'),
+        Next   = Header.getNext();
+
+    if ( !Next.get( 'id' ) ) {
+        Next.set( 'id', String.uniqueID () );
+    }
+
+    Header.getElement( '.scrolly' ).addEvent('click', function(event)
+    {
+        event.stop();
+        new Fx.Scroll( window).toElement( Next );
+    });
 });

@@ -3,8 +3,7 @@
 /* Carousel                                                                      */
 /*********************************************************************************/
 
-.carousel
-{
+.carousel {
     position: relative;
     overflow: hidden;
     padding: 2em 0 2em 0;
@@ -12,8 +11,7 @@
 }
 
 .carousel .forward,
-.carousel .backward
-{
+.carousel .backward {
     position: absolute;
     top: 50%;
     width: 6em;
@@ -22,13 +20,11 @@
     cursor: pointer;
 }
 
-.carousel .forward
-{
+.carousel .forward {
     right: 0;
 }
 
-.carousel .backward
-{
+.carousel .backward {
     left: 0;
 }
 
@@ -53,8 +49,7 @@
 }
 
 .carousel .forward:after,
-.carousel .backward:after
-{
+.carousel .backward:after {
     content: '';
     width: 3em;
     height: 3em;
@@ -63,13 +58,11 @@
     margin: -1.5em 0 0 0;
 }
 
-.carousel .forward:after
-{
+.carousel .forward:after {
     right: -0.25em;
 }
 
-.carousel .backward:after
-{
+.carousel .backward:after {
     left: -0.25em;
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
@@ -78,33 +71,28 @@
     transform: scaleX(-1);
 }
 
-.carousel .forward:before
-{
+.carousel .forward:before {
     right: -3em;
 }
 
-.carousel .backward:before
-{
+.carousel .backward:before {
     left: -3em;
 }
 
 .carousel .forward:hover:before,
-.carousel .backward:hover:before
-{
+.carousel .backward:hover:before {
     background-color: rgba(239,131,118, 0.75);
 }
 
-.carousel .reel
-{
+.carousel .reel {
     white-space: nowrap;
     position: relative;
     -webkit-overflow-scrolling: touch;
     padding: 0 2em 0 2em;
 }
 
-.carousel article
-{
-    display: inline-block;
+.carousel article {
+    display: inline-table;
     width: 18em;
     background: #fff;
     text-align: center;
@@ -119,22 +107,25 @@
     transition: opacity 0.75s ease-in-out;
 }
 
-.carousel article.loading
-{
+.carousel article.loading {
     opacity: 0;
 }
 
-.carousel article .image
-{
+.carousel article .image {
+    background: #ddd;
     position: relative;
     left: -1em;
     top: 0;
     width: auto;
     margin-right: -2em;
     margin-bottom: 3em;
+    min-height: 240px;
 }
 
-.carousel article p
-{
+.carousel article p {
+    min-height: 150px;
+}
+
+.carousel article p {
     text-align: center;
 }

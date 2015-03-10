@@ -1,0 +1,40 @@
+
+.quiqqer-bricks-sidebox1,
+.quiqqer-bricks-sidebox2,
+.quiqqer-bricks-sidebox3, {
+    padding-top: 2em;
+}
+
+.quiqqer-bricks-sidebox1 .image,
+.quiqqer-bricks-sidebox2 .image,
+.quiqqer-bricks-sidebox3 .image {
+    display: block;
+    margin: 0 0 4em;
+    width: 100%;
+}
+
+
+.quiqqer-bricks-sidebox1 header,
+.quiqqer-bricks-sidebox1 footer {
+    text-align: center;
+}
+
+
+.quiqqer-bricks-sidebox2 .image {
+    background: #ddd;
+    min-height: 450px;
+}
+
+.quiqqer-bricks-sidebox2 p {
+    min-height: 70px;
+}
+
+
+.quiqqer-bricks-sidebox3 .image {
+    background: #ddd;
+    min-height: 290px;
+}
+
+.quiqqer-bricks-sidebox3 p {
+    min-height: 120px;
+}
