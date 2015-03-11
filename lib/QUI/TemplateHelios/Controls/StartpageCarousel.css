@@ -119,7 +119,12 @@
     width: auto;
     margin-right: -2em;
     margin-bottom: 3em;
-    min-height: 240px;
+}
+
+@media screen and (min-width: 840px) {
+    .carousel article .image {
+        min-height: 240px;
+    }
 }
 
 .carousel article p {

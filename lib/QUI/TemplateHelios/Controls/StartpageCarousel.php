@@ -94,7 +94,7 @@ class StartpageCarousel extends QUI\Control
         }
 
         if ( !$order ) {
-            $order = 'release_from ASC';
+            $order = 'release_from DESC';
         }
 
         $sitetypes = explode( ';', $sitetypes );

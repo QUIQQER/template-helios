@@ -60,6 +60,11 @@
 
     <groups name="quiqqer/template-helios" datatype="php">
 
+        <locale name="copyright.text" html="true">
+            <de><![CDATA[&copy; Copyright [year]]]></de>
+            <en><![CDATA[&copy; Copyright [year]]]></en>
+        </locale>
+
         <locale name="continue.reading">
             <de><![CDATA[Weiterlesen]]></de>
             <en><![CDATA[Continue Reading]]></en>
