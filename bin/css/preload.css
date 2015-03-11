@@ -65,36 +65,38 @@ hr {
     text-align: center;
 }
 
-.quiqqer-bricks-sidebox2 .image {
-    background: #ddd;
-}
-
-.quiqqer-bricks-sidebox2 p {
-    min-height: 70px;
-}
-
+.quiqqer-bricks-sidebox2 .image,
 .quiqqer-bricks-sidebox3 .image {
     background: #ddd;
+    overflow: hidden;
+    position: relative;
+}
+
+.quiqqer-bricks-sidebox2 .image img,
+.quiqqer-bricks-sidebox3 .image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.quiqqer-bricks-sidebox2 .image::before,
+.quiqqer-bricks-sidebox3 .image::before {
+    content: "";
+    display: block;
+    /* initial ratio of 3:2, the real ratio should be 66.666% */
+    padding-top: 66%;
 }
 
 
 @media screen and (min-width: 840px) {
-
-    .quiqqer-bricks-sidebox2 .image {
-        background: #ddd;
-        min-height: 450px;
-    }
-
-    .quiqqer-bricks-sidebox3 .image {
-        min-height: 290px;
+    .quiqqer-bricks-sidebox2 p {
+        min-height: 70px;
     }
 
     .quiqqer-bricks-sidebox3 p {
         min-height: 120px;
     }
-
 }
-
 
 
 /*********************************************************************************/
