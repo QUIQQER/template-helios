@@ -61,8 +61,8 @@
     <groups name="quiqqer/template-helios" datatype="php">
 
         <locale name="continue.reading">
-            <de><![CDATA[weiterlesen]]></de>
-            <en><![CDATA[Continue reading]]></en>
+            <de><![CDATA[Weiterlesen]]></de>
+            <en><![CDATA[Continue Reading]]></en>
         </locale>
         <locale name="startpage.start.button">
             <de><![CDATA[Los gehts]]></de>

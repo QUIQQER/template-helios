@@ -1,7 +1,43 @@
 
+hr {
+    clear: both;
+}
+
 #nav a span,
 #header h1 a {
     color: #fff;
+}
+
+#content h1 {
+    font-size: 2.85em !important;
+}
+
+#content h1 {
+    margin: 0 0 1em !important;
+}
+
+#content h2,
+#content h3,
+.quiqqer-bricks-sidebox1 h2,
+.quiqqer-bricks-sidebox1 h3 {
+    margin: 0 0 0.8em !important;
+}
+
+#content header h2,
+#content header h3 {
+    margin: 0 !important;
+}
+
+#content h1 a,
+#content h2 a {
+    color: inherit;
+}
+
+#content h1 a:hover,
+#content h2 a:hover,
+#content h3 a:hover,
+#content h4 a:hover {
+    color: #ef8276;
 }
 
 .quiqqer-bricks-sidebox1,
@@ -42,4 +78,77 @@
 
 .quiqqer-bricks-sidebox3 p {
     min-height: 120px;
+}
+
+
+
+/*********************************************************************************/
+/* QUIQQER Colors
+/*********************************************************************************/
+
+.control-color {
+    background: #2b252c;
+    color: #fff;
+}
+
+
+/*********************************************************************************/
+/* QUIQQER Controls
+/*********************************************************************************/
+
+/* buttons */
+.qui-button {
+    border-radius: 0.5em !important;
+    background: #df7366 !important;
+    color: #fff !important;
+    font-size: 15pt;
+    font-weight: 300;
+    text-align: center !important;
+    text-decoration: none !important;
+    padding: 0.65em 3em 0.65em 3em !important;
+}
+
+/* sheets */
+.quiqqer-sheets-desktop a,
+.quiqqer-sheets-desktop span {
+    border-radius: 3px !important;
+    color: #5d5d5d;
+    font-size: 0.8em;
+    line-height: 40px;
+    margin-right: 2px !important;
+    padding: 0 15px;
+}
+
+.quiqqer-sheets-desktop a:hover {
+    background: #df7366;
+    border: 1px solid #df7366 !important;
+    color: #fff;
+}
+
+.quiqqer-sheets-desktop-current {
+    background: #D9D6D7 !important;
+    border: 1px solid #D9D6D7 !important;
+    border-radius: 3px !important;
+    color: #231F20 !important;
+}
+
+.quiqqer-sheets-desktop-disabled {
+    color: #AAAAAA !important;
+    border-color: #DDDDDD !important;
+}
+
+/* gallery */
+section.quiqqer-gallery-grid-list {
+    margin: 0 !important;
+}
+
+/* list */
+.qui-control-list-section hr {
+    top: 2em;
+    margin-bottom: 4em;
+}
+
+/* search */
+.form-field-search {
+    margin-bottom: 1em;
 }
