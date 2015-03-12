@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <project>
+
+        <settings>
+            <config>
+                <section name="templateHelios.settings">
+                    <conf name="headerLogo">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="headerText">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="headerShort">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="controlColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#df7366</defaultvalue>
+                    </conf>
+                    <conf name="footerColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#2b252c</defaultvalue>
+                    </conf>
+                </section>
+            </config>
+
+            <window>
+                <categories>
+                    <category name="templateHelios">
+                        <text>Template Helios Settings</text>
+                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+
+                        <settings title="templateHelios.settings" name="templateHelios.settings">
+                            <title>
+                                Template Helios Einstellungen
+                            </title>
+                            <input conf="templateHelios.settings.headerLogo" class="media-image">
+                                <text>Header-Logo</text>
+                            </input>
+                            <input conf="templateHelios.settings.headerText">
+                                <text>Header-Text</text>
+                            </input>
+                            <input conf="templateHelios.settings.controlColor" type="color">
+                                <text>Control Hintergrundfarbe</text>
+                            </input>
+                            <input conf="templateHelios.settings.footerColor" type="color">
+                                <text>Footer Hintergrundfarbe</text>
+                            </input>
+                        </settings>
+
+                    </category>
+                </categories>
+
+            </window>
+        </settings>
+
+        <wysiwyg class="page-content">
+            <css src="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" />
+            <css src="URL_OPT_DIR/quiqqer/template-helios/bin/css/style.css" />
+        </wysiwyg>
+
+    </project>
+</quiqqer>

@@ -1,4 +1,5 @@
-@charset 'UTF-8';
+@charset "UTF-8";
+
 @import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600');
 @import url('font-awesome.min.css');
 
@@ -100,8 +101,8 @@
 	
 		a:hover
 		{
-			color: #ef8376;
 			border-bottom-color: transparent;
+            /*color: #ef8376;*/
 		}
 
 	sub
@@ -394,10 +395,12 @@
 						color: inherit;
 					}
 					
-						ul.icons li a:hover
+						/*
+                        ul.icons li a:hover
 						{
 							color: #ef8376;
 						}
+						*/
 		
 		ol
 		{
@@ -469,7 +472,7 @@
 				form textarea:focus
 				{
 					background: #fff;
-					border-color: #df7366;
+					/*border-color: #df7366;*/
 				}
 
 				form .formerize-placeholder
@@ -552,7 +555,6 @@
 				}
 
 	/* Button */
-
         .content-button,
 		input[type="button"],
 		input[type="submit"],
@@ -561,7 +563,7 @@
 		{
 			position: relative;
 			display: inline-block;
-			background: #df7366;
+			/*background: #df7366;*/
 			color: #fff;
 			text-align: center;
 			border-radius: 0.5em;
@@ -571,20 +573,23 @@
 			cursor: pointer;
 			outline: 0;
 			font-weight: 300;
-			-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
-			-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
-			-o-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
-			-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
-			transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+            opacity: 1;
+			-moz-transition: all 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+			-webkit-transition: all 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+			-o-transition: all 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+			-ms-transition: all 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+			transition: all 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		}
 
+            .content-button:hover,
 			input[type="button"]:hover,
 			input[type="submit"]:hover,
 			input[type="reset"]:hover,
 			.button:hover
 			{
 				color: #fff;
-				background: #ef8376;
+				/*background: #ef8376;*/
+                opacity: 0.6;
 			}
 			
 			input[type="button"].alt,
@@ -917,7 +922,7 @@
 
 			.dropotron li:hover
 			{
-				color: #ef8376;
+				/*color: #ef8376;*/
 			}
 
 			.dropotron li a,
@@ -990,6 +995,19 @@
 			margin-bottom: 0;
 		}
 
+        #content a {
+            text-decoration: underline;
+        }
+
+        #content a:hover {
+            text-decoration: none;
+        }
+
+        #content a.content-button,
+        #content a.button {
+            text-decoration: none;
+        }
+
 		
 /*********************************************************************************/
 /* Sidebar                                                                       */
@@ -1039,7 +1057,7 @@
 		position: relative;
 		overflow: hidden;
 		padding: 6em 0 6em 0;
-		background: #2b252c;
+		/*background: #2b252c;*/
 		color: #fff;
 	}
 

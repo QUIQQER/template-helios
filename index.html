@@ -18,11 +18,6 @@
 
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 
-    <link href="{$URL_TPL_DIR}bin/css/font-awesome.min.css"
-          rel="stylesheet"
-          type="text/css"
-    />
-
     <link href="{$URL_TPL_DIR}bin/css/unsemantic/unsemantic-grid-responsive.css"
           rel="stylesheet"
           type="text/css"
@@ -41,6 +36,61 @@
         <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/ie/v8.css" />
     <![endif]-->
 
+    <style>
+        a:hover {
+            color: {$controlColor};
+        }
+
+        ul.icons li a:hover {
+            color: {$controlColor};
+        }
+
+        form input[type="text"]:focus,
+        form input[type="email"]:focus,
+        form input[type="password"]:focus,
+        form select:focus,
+        form textarea:focus {
+            border-color: {$controlColor};
+        }
+
+        .content-button,
+        input[type="button"],
+        input[type="submit"],
+        input[type="reset"],
+        .button {
+            background: {$controlColor};
+        }
+
+        .qui-button {
+            background: {$controlColor} !important;
+        }
+
+        .quiqqer-sheets-desktop a:hover {
+            background: {$controlColor};
+            border: 1px solid {$controlColor} !important;
+        }
+
+        .dropotron li:hover {
+            color: {$controlColor};
+        }
+
+        #content h1 a:hover,
+        #content h2 a:hover,
+        #content h3 a:hover,
+        #content h4 a:hover {
+            color: {$controlColor};
+        }
+
+        .carousel .forward:hover:before,
+        .carousel .backward:hover:before {
+            background-color: {$controlColor};
+        }
+
+        #footer {
+            background: {$footerColor};
+        }
+    </style>
+
 </head>
 <body class="{$bodyClass}">
 
@@ -53,8 +103,12 @@
     <div class="inner">
         <header>
             <h1>
-                <a href="{url id=1}" id="logo">
-                    {$Start->getAttribute('title')}
+                <a href="{url id=1}" id="logo" title="{$headerText|escape:"html"}">
+                {if $headerLogo}
+                    {image src=$headerLogo}
+                {else}
+                    {$headerText}
+                {/if}
                 </a>
             </h1>
             <hr />

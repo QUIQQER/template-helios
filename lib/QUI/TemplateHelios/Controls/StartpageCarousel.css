@@ -40,11 +40,11 @@
     position: absolute;
     top: 50%;
     margin-top: -3em;
-    -moz-transition: background-color 0.35s ease-in-out;
-    -webkit-transition: background-color 0.35s ease-in-out;
-    -o-transition: background-color 0.35s ease-in-out;
-    -ms-transition: background-color 0.35s ease-in-out;
-    transition: background-color 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
     -webkit-backface-visibility: hidden;
 }
 
@@ -81,7 +81,8 @@
 
 .carousel .forward:hover:before,
 .carousel .backward:hover:before {
-    background-color: rgba(239,131,118, 0.75);
+    /*background-color: rgba(239,131,118, 0.75);*/
+    opacity: 0.3;
 }
 
 .carousel .reel {

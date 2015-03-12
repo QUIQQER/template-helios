@@ -33,11 +33,11 @@ hr {
     color: inherit;
 }
 
-#content h1 a:hover,
-#content h2 a:hover,
-#content h3 a:hover,
-#content h4 a:hover {
-    color: #ef8276;
+#content h1 a,
+#content h2 a,
+#content h3 a,
+#content h4 a {
+    text-decoration: none;
 }
 
 #content pre {
@@ -119,7 +119,6 @@ hr {
 /* buttons */
 .qui-button {
     border-radius: 0.5em !important;
-    background: #df7366 !important;
     color: #fff !important;
     font-size: 15pt;
     font-weight: 300;
@@ -136,12 +135,11 @@ hr {
     font-size: 0.8em;
     line-height: 40px;
     margin-right: 2px !important;
+    text-decoration: none !important;
     padding: 0 15px;
 }
 
 .quiqqer-sheets-desktop a:hover {
-    background: #df7366;
-    border: 1px solid #df7366 !important;
     color: #fff;
 }
 
