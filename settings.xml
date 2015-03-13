@@ -42,10 +42,10 @@
                                 <text>Header-Text</text>
                             </input>
                             <input conf="templateHelios.settings.controlColor" type="color">
-                                <text>Control Hintergrundfarbe</text>
+                                <text>Hintergrundfarbe Bedienelementen</text>
                             </input>
                             <input conf="templateHelios.settings.footerColor" type="color">
-                                <text>Footer Hintergrundfarbe</text>
+                                <text>Hintergrundfarbe des Footers</text>
                             </input>
                         </settings>
 
