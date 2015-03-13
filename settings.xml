@@ -28,24 +28,46 @@
             <window>
                 <categories>
                     <category name="templateHelios">
-                        <text>Template Helios Settings</text>
+                        <text>
+                            <locale group="quiqqer/template-helios"
+                                    var="template.settings.title"
+                            />
+                        </text>
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
 
                         <settings title="templateHelios.settings" name="templateHelios.settings">
                             <title>
-                                Template Helios Einstellungen
+                                <locale group="quiqqer/template-helios"
+                                        var="template.settings.title"
+                                />
                             </title>
                             <input conf="templateHelios.settings.headerLogo" class="media-image">
-                                <text>Header-Logo</text>
+                                <text>
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.headerLogo"
+                                    />
+                                </text>
                             </input>
                             <input conf="templateHelios.settings.headerText">
-                                <text>Header-Text</text>
+                                <text>
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.headerText"
+                                    />
+                                </text>
                             </input>
                             <input conf="templateHelios.settings.controlColor" type="color">
-                                <text>Hintergrundfarbe Bedienelementen</text>
+                                <text>
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.colorControls"
+                                    />
+                                </text>
                             </input>
                             <input conf="templateHelios.settings.footerColor" type="color">
-                                <text>Hintergrundfarbe des Footers</text>
+                                <text>
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.colorFooter"
+                                    />
+                                </text>
                             </input>
                         </settings>
 

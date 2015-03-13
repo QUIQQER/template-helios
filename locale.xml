@@ -60,6 +60,7 @@
 
     <groups name="quiqqer/template-helios" datatype="php">
 
+        <!-- template vars -->
         <locale name="copyright.text" html="true">
             <de><![CDATA[&copy; Copyright [year]]]></de>
             <en><![CDATA[&copy; Copyright [year]]]></en>
@@ -74,6 +75,7 @@
             <en><![CDATA[Start]]></en>
         </locale>
 
+        <!-- layouts -->
         <locale name="admin.types.startpage">
             <de><![CDATA[Layout - Startseite]]></de>
             <en><![CDATA[Layout - startpage]]></en>
@@ -89,6 +91,28 @@
         <locale name="admin.types.noSidebar">
             <de><![CDATA[Layout - Keine Sidebar]]></de>
             <en><![CDATA[Layout - No sidebar]]></en>
+        </locale>
+
+        <!-- template settings -->
+        <locale name="template.settings.title">
+            <de><![CDATA[Template: Helios-Einstellungen]]></de>
+            <en><![CDATA[Template: Helios settings]]></en>
+        </locale>
+        <locale name="template.settings.headerLogo">
+            <de><![CDATA[Header-Logo]]></de>
+            <en><![CDATA[Header logo]]></en>
+        </locale>
+        <locale name="template.settings.headerText">
+            <de><![CDATA[Header-Text]]></de>
+            <en><![CDATA[Header text]]></en>
+        </locale>
+        <locale name="template.settings.colorControls">
+            <de><![CDATA[Hintergrundfarbe der Bedienelementen]]></de>
+            <en><![CDATA[Backgroundcolor of the controls]]></en>
+        </locale>
+        <locale name="template.settings.colorFooter">
+            <de><![CDATA[Hintergrundfarbe des Footers]]></de>
+            <en><![CDATA[Backgroundcolor of the footer]]></en>
         </locale>
 
     </groups>
