@@ -2,8 +2,8 @@
     "name": "quiqqer/template-helios",
     "type": "quiqqer-template",
     "description": "QUIQQER Template - Helios",
-    "version": "dev-master",
-    "license": "MIT",
+    "version": "1.0.0",
+    "license": "CCA-3.0",
 
     "authors": [
         {
