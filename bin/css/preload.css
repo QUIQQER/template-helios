@@ -40,10 +40,17 @@ hr {
     text-decoration: none;
 }
 
+#sidebar pre,
 #content pre {
     max-width: 100%;
     overflow: auto;
 }
+
+#sidebar img,
+#content img {
+    max-width: 100%;
+}
+
 
 .quiqqer-bricks-sidebox1,
 .quiqqer-bricks-sidebox2,
