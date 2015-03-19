@@ -1008,6 +1008,11 @@
             text-decoration: none;
         }
 
+        #content ul {
+            list-style-type: circle;
+            padding-left: 1em;
+        }
+
 		
 /*********************************************************************************/
 /* Sidebar                                                                       */
