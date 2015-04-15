@@ -51,6 +51,13 @@ hr {
     max-width: 100%;
 }
 
+#content article {
+    margin-bottom: 1em;
+}
+
+#content .content-short {
+    margin-bottom: 1em;
+}
 
 .quiqqer-bricks-sidebox1,
 .quiqqer-bricks-sidebox2,
@@ -94,6 +101,12 @@ hr {
     padding-top: 66%;
 }
 
+#content ul,
+#sidebar ul {
+    list-style: inside circle !important;
+    padding-left: 0.5em !important;
+}
+
 
 @media screen and (min-width: 840px) {
     .quiqqer-bricks-sidebox2 p {
@@ -118,6 +131,9 @@ hr {
     background: rgba(72, 57, 73, 0.5);
 }
 
+.content-short {
+    font-style: italic;
+}
 
 /*********************************************************************************/
 /* QUIQQER Controls
@@ -179,10 +195,6 @@ section.quiqqer-gallery-grid-list {
 }
 
 /* sitemap */
-.qui-sitetypes-sitemap ul {
-    list-style: inside circle;
-    padding-left: 2em;
-}
 
 .qui-sitetypes-sitemap-block-category ul {
     list-style: inside circle;

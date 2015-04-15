@@ -675,8 +675,10 @@
 	.wrapper
 	{
 		background: #fff;
+        float: left;
 		margin: 0 0 2em 0;
 		padding: 6em 0 6em 0;
+        width: 100%;
 	}
 	
 		.wrapper.style1
