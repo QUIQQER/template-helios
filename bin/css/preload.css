@@ -107,6 +107,12 @@ hr {
     padding-left: 0.5em !important;
 }
 
+#content ul ul,
+#sidebar ul ul {
+    list-style: inside circle !important;
+    padding-left: 2em !important;
+}
+
 
 @media screen and (min-width: 840px) {
     .quiqqer-bricks-sidebox2 p {
