@@ -4,21 +4,21 @@
  * Emotion
  */
 
-\QUI\Utils\Site::setRecursivAttribute( $Site, 'image_emotion' );
+\QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
 
 /**
  * colors
  */
 
-$footerColor  = '#2b252c';
+$footerColor = '#2b252c';
 $controlColor = '#ef8376';
 
-if ( $Project->getConfig( 'templateHelios.settings.controlColor' ) ) {
-    $controlColor = $Project->getConfig( 'templateHelios.settings.controlColor' );
+if ($Project->getConfig('templateHelios.settings.controlColor')) {
+    $controlColor = $Project->getConfig('templateHelios.settings.controlColor');
 }
 
-if ( $Project->getConfig( 'templateHelios.settings.footerColor' ) ) {
-    $footerColor = $Project->getConfig( 'templateHelios.settings.footerColor' );
+if ($Project->getConfig('templateHelios.settings.footerColor')) {
+    $footerColor = $Project->getConfig('templateHelios.settings.footerColor');
 }
 
 $Engine->assign(array(
@@ -30,18 +30,18 @@ $Engine->assign(array(
  * Header
  */
 
-$headerText = $Project->firstChild()->getAttribute( 'title' );
+$headerText = $Project->firstChild()->getAttribute('title');
 $headerLogo = false;
 
-$confLogoSetting = $Project->getConfig( 'templateHelios.settings.headerLogo' );
+$confLogoSetting = $Project->getConfig('templateHelios.settings.headerLogo');
 
-if ( $Project->getConfig( 'templateHelios.settings.headerText' ) ) {
-    $headerText = $Project->getConfig( 'templateHelios.settings.headerText' );
+if ($Project->getConfig('templateHelios.settings.headerText')) {
+    $headerText = $Project->getConfig('templateHelios.settings.headerText');
 }
 
-if ( $confLogoSetting &&
-     QUI\Projects\Media\Utils::isMediaUrl( $confLogoSetting ) )
-{
+if ($confLogoSetting
+    && QUI\Projects\Media\Utils::isMediaUrl($confLogoSetting)
+) {
     $headerLogo = $confLogoSetting;
 }
 
@@ -56,22 +56,21 @@ $Engine->assign(array(
 
 $bodyClass = '';
 
-switch ( $Template->getLayoutType() )
-{
+switch ($Template->getLayoutType()) {
     case 'layout/startpage':
         $bodyClass = 'homepage';
-    break;
+        break;
 
     case 'layout/leftSidebar':
         $bodyClass = 'left-sidebar';
-    break;
+        break;
 
     case 'layout/rightSidebar':
         $bodyClass = 'right-sidebar';
-    break;
+        break;
 
     default:
         $bodyClass = 'no-sidebar';
 }
 
-$Engine->assign( 'bodyClass', $bodyClass );
+$Engine->assign('bodyClass', $bodyClass);

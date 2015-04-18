@@ -17,6 +17,7 @@ class StartpageCarousel extends QUI\Control
 {
     /**
      * constructor
+     *
      * @param Array $attributes
      */
     public function __construct($attributes = array())
@@ -29,39 +30,38 @@ class StartpageCarousel extends QUI\Control
             'nodeName'  => 'section'
         ));
 
-        parent::setAttributes( $attributes );
+        parent::setAttributes($attributes);
 
         $this->addCSSFile(
-            dirname( __FILE__ ) . '/StartpageCarousel.css'
+            dirname(__FILE__).'/StartpageCarousel.css'
         );
     }
 
     /**
      * (non-PHPdoc)
+     *
      * @see \QUI\Control::create()
      */
     public function getBody()
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
-        $limit     = $this->getAttribute( 'limit' );
-        $sitetypes = $this->getAttribute( 'sitetypes' );
-        $order     = $this->getAttribute( 'order' );
+        $limit = $this->getAttribute('limit');
+        $sitetypes = $this->getAttribute('sitetypes');
+        $order = $this->getAttribute('order');
 
-        if ( !$limit ) {
+        if (!$limit) {
             $limit = 2;
         }
 
-        if ( !$order ) {
+        if (!$order) {
             $order = 'release_from ASC';
         }
 
-        if ( !empty( $sitetypes ) )
-        {
+        if (!empty($sitetypes)) {
             $children = $this->_getSitesByList();
 
-        } else
-        {
+        } else {
             $children = $this->_getProject()->getSites(array(
                 'limit' => $limit,
                 'order' => $order
@@ -74,7 +74,7 @@ class StartpageCarousel extends QUI\Control
         ));
 
 
-        return $Engine->fetch( dirname( __FILE__ ) .'/StartpageCarousel.html' );
+        return $Engine->fetch(dirname(__FILE__).'/StartpageCarousel.html');
     }
 
     /**
@@ -84,29 +84,27 @@ class StartpageCarousel extends QUI\Control
      */
     protected function _getSitesByList()
     {
-        $Project   = $this->_getProject();
-        $limit     = $this->getAttribute( 'limit' );
-        $sitetypes = $this->getAttribute( 'sitetypes' );
-        $order     = $this->getAttribute( 'order' );
+        $Project = $this->_getProject();
+        $limit = $this->getAttribute('limit');
+        $sitetypes = $this->getAttribute('sitetypes');
+        $order = $this->getAttribute('order');
 
-        if ( !$limit ) {
+        if (!$limit) {
             $limit = 2;
         }
 
-        if ( !$order ) {
+        if (!$order) {
             $order = 'release_from DESC';
         }
 
-        $sitetypes = explode( ';', $sitetypes );
+        $sitetypes = explode(';', $sitetypes);
 
-        $ids   = array();
+        $ids = array();
         $types = array();
         $where = array();
 
-        foreach ( $sitetypes as $sitetypeEntry )
-        {
-            if ( is_numeric( $sitetypeEntry ) )
-            {
+        foreach ($sitetypes as $sitetypeEntry) {
+            if (is_numeric($sitetypeEntry)) {
                 $ids[] = $sitetypeEntry;
                 continue;
             }
@@ -114,18 +112,16 @@ class StartpageCarousel extends QUI\Control
             $types[] = $sitetypeEntry;
         }
 
-        if ( !empty( $ids ) )
-        {
+        if (!empty($ids)) {
             $where['id'] = array(
-                'type' => 'IN',
+                'type'  => 'IN',
                 'value' => $ids
             );
         }
 
-        if ( !empty( $types ) )
-        {
+        if (!empty($types)) {
             $where['type'] = array(
-                'type' => 'IN',
+                'type'  => 'IN',
                 'value' => $types
             );
         }
