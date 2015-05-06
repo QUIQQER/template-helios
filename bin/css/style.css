@@ -219,6 +219,7 @@
 		header
 		{
 			margin: 0 0 1em 0;
+            max-width: 100%;
 		}
 
 			header > p
@@ -765,6 +766,10 @@
 			{
 				color: inherit;
 			}
+
+            #logo {
+                max-width: 70%;
+            }
 	
 		#header header > p
 		{
