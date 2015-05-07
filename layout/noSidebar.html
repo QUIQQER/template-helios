@@ -5,7 +5,7 @@
             {$Template->getBody()}
         </div>
 
-        {brickarea assign="bricks" area="rightSidebar" Site=$Site}
+        {brickarea assign="bricks" area="noSidebar" Site=$Site}
         {foreach from=$bricks item=Brick}
         <div class="row">
             {$Brick->create()}
