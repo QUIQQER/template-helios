@@ -814,6 +814,27 @@
 				background: rgba(192,192,192,0.35);
 			}
 
+            .header-image {
+                max-width: 100%;
+            }
+
+        .header-type-image .inner {
+            padding: 0 20px !important;
+            text-align: left;
+        }
+
+        .header-type-image .inner header {
+            width: 100%;
+        }
+
+        .header-type-image .inner header h1 {
+            float: left;
+        }
+
+        .header-type-image .inner header p {
+            float: right;
+        }
+
 /*********************************************************************************/
 /* Nav                                                                           */
 /*********************************************************************************/

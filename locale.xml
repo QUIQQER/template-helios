@@ -98,6 +98,16 @@
             <de><![CDATA[Template: Helios-Einstellungen]]></de>
             <en><![CDATA[Template: Helios settings]]></en>
         </locale>
+
+        <locale name="template.settings.pageMaxWidth">
+            <de><![CDATA[Maximale Seitenbreite]]></de>
+            <en><![CDATA[Max page width]]></en>
+        </locale>
+        <locale name="template.settings.pageBackground">
+            <de><![CDATA[Seitenhintergrundbild]]></de>
+            <en><![CDATA[Page background image]]></en>
+        </locale>
+
         <locale name="template.settings.headerLogo">
             <de><![CDATA[Header-Logo]]></de>
             <en><![CDATA[Header logo]]></en>

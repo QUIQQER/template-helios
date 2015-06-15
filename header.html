@@ -1,0 +1,49 @@
+<div id="header"
+     {if $pageHeaderImage != 'image'}
+     style="background-image: url('{image src=$Site->getAttribute('image_emotion') rewrited=true onlysrc=true}');"
+     {else}
+     class="header-type-image"
+    {/if}
+>
+
+    <!-- Inner -->
+    <div class="inner">
+        <header>
+
+            <h1>
+                <a href="{url id=1}" id="logo" title="{$headerText|escape:" html"}">
+                {if $headerLogo}
+                    {image src=$headerLogo}
+                {else}
+                    {$headerText}
+                {/if}
+                </a>
+            </h1>
+            {if $pageHeaderImage != 'image'}
+            <hr/>
+            {/if}
+            <p>
+                {$Start->getAttribute('short')}
+            </p>
+        </header>
+        {if $bodyClass == 'homepage'}
+        <footer>
+            <a href="" class="button circled scrolly">
+                {locale group="quiqqer/template-helios" var="startpage.start.button"}
+            </a>
+        </footer>
+        {/if}
+    </div>
+
+    <!-- Nav -->
+    <nav id="nav">
+        {include file="`$TPL_DIR`menu.html"
+            Site=$Project->firstChild()
+            ActiveSite=$Site
+        }
+    </nav>
+
+    {if $pageHeaderImage == 'image'}
+        {image src=$Site->getAttribute('image_emotion') class="header-image"}
+    {/if}
+</div>

@@ -4,7 +4,24 @@
  * Emotion
  */
 
-\QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
+QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
+
+/**
+ * Background
+ */
+
+$Background = false;
+
+if ($Project->getConfig('templateHelios.settings.pageBackground')) {
+    try {
+        $Background = QUI\Projects\Media\Utils::getImageByUrl(
+            $Project->getConfig('templateHelios.settings.pageBackground')
+        );
+
+    } catch (QUI\Exception $Exception) {
+        \QUI\System\Log::writeRecursive($Exception->getMessage());
+    }
+}
 
 /**
  * colors
@@ -23,7 +40,8 @@ if ($Project->getConfig('templateHelios.settings.footerColor')) {
 
 $Engine->assign(array(
     'controlColor' => $controlColor,
-    'footerColor'  => $footerColor
+    'footerColor'  => $footerColor,
+    'Background'   => $Background
 ));
 
 /**
@@ -46,8 +64,11 @@ if ($confLogoSetting
 }
 
 $Engine->assign(array(
-    'headerText' => $headerText,
-    'headerLogo' => $headerLogo
+    'headerText'      => $headerText,
+    'headerLogo'      => $headerLogo,
+    'headerMenuPos'   => $Project->getConfig('templateHelios.settings.pageMenuPos'),
+    'pageHeaderImage' => $Project->getConfig('templateHelios.settings.pageHeaderImage'),
+    'headerFile'      => dirname(__FILE__).'/header.html'
 ));
 
 /**

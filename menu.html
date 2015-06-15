@@ -1,5 +1,6 @@
 
 {assign var=children value=$Site->getNavigation()}
+{assign var=activeId value=$ActiveSite->getId()}
 
 {if !isset($level)}
     {assign var=level value=1}
@@ -10,7 +11,11 @@
 {if count($children)}
 <ul>
     {foreach from=$children item=Child}
-    <li>
+    {assign var=active value=""}
+    {if $activeId == $Child->getId() || $Rewrite->isIdInPath($Child->getId())}
+        {assign var=active value="quiqqer-navigation-active"}
+    {/if}
+    <li class="{$active}">
         <a href="{url site=$Child}">
             <span class="left-menu-text">
                 {$Child->getAttribute('title')}
