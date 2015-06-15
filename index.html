@@ -89,81 +89,92 @@
         #footer {
             background: {$footerColor};
         }
+
+        {if $Project->getConfig('templateHelios.settings.maxPageWidth')}
+        .container {
+            max-width: {$Project->getConfig('templateHelios.settings.maxPageWidth')}px;
+        }
+        {/if}
+
     </style>
 
 </head>
 <body class="{$bodyClass}">
+{if $Project->getConfig('templateHelios.settings.maxPageWidth')}
+    <div class="page" style="margin: 0 auto; max-width: {$Project->getConfig('templateHelios.settings.maxPageWidth')}px">
+{else}
+    <div class="page">
+{/if}
+    <!-- Header -->
+    <div id="header"
+         style="background-image: url('{image src=$Site->getAttribute('image_emotion') rewrited=true onlysrc=true}');"
+    >
 
-<!-- Header -->
-<div id="header"
-     style="background-image: url('{image src=$Site->getAttribute('image_emotion') rewrited=true onlysrc=true}');"
->
-
-    <!-- Inner -->
-    <div class="inner">
-        <header>
-            <h1>
-                <a href="{url id=1}" id="logo" title="{$headerText|escape:"html"}">
-                {if $headerLogo}
-                    {image src=$headerLogo}
-                {else}
-                    {$headerText}
-                {/if}
+        <!-- Inner -->
+        <div class="inner">
+            <header>
+                <h1>
+                    <a href="{url id=1}" id="logo" title="{$headerText|escape:"html"}">
+                    {if $headerLogo}
+                        {image src=$headerLogo}
+                    {else}
+                        {$headerText}
+                    {/if}
+                    </a>
+                </h1>
+                <hr />
+                <p>
+                    {$Start->getAttribute('short')}
+                </p>
+            </header>
+            {if $bodyClass == 'homepage'}
+            <footer>
+                <a href="" class="button circled scrolly">
+                    {locale group="quiqqer/template-helios" var="startpage.start.button"}
                 </a>
-            </h1>
-            <hr />
-            <p>
-                {$Start->getAttribute('short')}
-            </p>
-        </header>
-        {if $bodyClass == 'homepage'}
-        <footer>
-            <a href="" class="button circled scrolly">
-                {locale group="quiqqer/template-helios" var="startpage.start.button"}
-            </a>
-        </footer>
-        {/if}
+            </footer>
+            {/if}
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+            {include file="`$TPL_DIR`menu.html"
+                Site=$Project->firstChild()
+                ActiveSite=$Site
+            }
+        </nav>
     </div>
 
-    <!-- Nav -->
-    <nav id="nav">
-        {include file="`$TPL_DIR`menu.html"
-            Site=$Project->firstChild()
-            ActiveSite=$Site
-        }
-    </nav>
-</div>
+    {$Template->getLayout()}
 
-{$Template->getLayout()}
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
 
-<!-- Footer -->
-<div id="footer">
-    <div class="container">
-
-        {brickarea assign="bricks" area="footer" Site=$Site}
-        {foreach from=$bricks item=Brick}
-        <div class="row">
-            <div class="12u">
-                {$Brick->create()}
+            {brickarea assign="bricks" area="footer" Site=$Site}
+            {foreach from=$bricks item=Brick}
+            <div class="row">
+                <div class="12u">
+                    {$Brick->create()}
+                </div>
             </div>
-        </div>
-        <hr />
-        {/foreach}
+            <hr />
+            {/foreach}
 
-        <div class="row">
-            <div class="12u">
+            <div class="row">
+                <div class="12u">
 
-                <!-- Copyright -->
-                <div class="copyright">
-                    {locale group="quiqqer/template-helios" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        {locale group="quiqqer/template-helios" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
     </div>
 </div>
-
 <script src="{$URL_TPL_DIR}bin/js/jquery.min.js"></script>
 <script src="{$URL_TPL_DIR}bin/js/helios.js"></script>
 

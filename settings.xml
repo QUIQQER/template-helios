@@ -5,6 +5,9 @@
         <settings>
             <config>
                 <section name="templateHelios.settings">
+                    <conf name="maxPageWidth">
+                        <type><![CDATA[integer]]></type>
+                    </conf>
                     <conf name="headerLogo">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -36,6 +39,18 @@
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
 
                         <settings title="templateHelios.settings" name="templateHelios.settings">
+                            <title>
+                                <locale group="quiqqer/template-helios"
+                                        var="template.settings.maxPageWidth"
+                                />
+                            </title>
+                            <input conf="templateHelios.settings.maxPageWidth" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.maxPageWidth"
+                                    />
+                                </text>
+                            </input>
                             <title>
                                 <locale group="quiqqer/template-helios"
                                         var="template.settings.title"
