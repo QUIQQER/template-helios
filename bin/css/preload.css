@@ -40,6 +40,17 @@ hr {
     text-decoration: none;
 }
 
+#content h1,
+#content h2,
+#content h3,
+#content h4 {
+    hyphens: auto;
+        -moz-hyphens: auto;
+        -o-hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+}
+
 #sidebar pre,
 #content pre {
     max-width: 100%;
