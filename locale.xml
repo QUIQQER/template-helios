@@ -108,6 +108,33 @@
             <en><![CDATA[Page background image]]></en>
         </locale>
 
+        <locale name="template.settings.pageMenuPos">
+            <de><![CDATA[Menü Position]]></de>
+            <en><![CDATA[Menu position]]></en>
+        </locale>
+        <locale name="template.settings.pageMenuPos.bottom">
+            <de><![CDATA[Kopfbereich unten]]></de>
+            <en><![CDATA[Menu to the bottom]]></en>
+        </locale>
+        <locale name="template.settings.pageMenuPos.top">
+            <de><![CDATA[Kopfbereich oben]]></de>
+            <en><![CDATA[Menu to the top]]></en>
+        </locale>
+
+        <locale name="template.settings.pageHeaderImage">
+            <de><![CDATA[Headerbild-Typ]]></de>
+            <en><![CDATA[headerimage type]]></en>
+        </locale>
+        <locale name="template.settings.pageHeaderImage.as.background">
+            <de><![CDATA[Als Hintergrund]]></de>
+            <en><![CDATA[As background]]></en>
+        </locale>
+        <locale name="template.settings.pageHeaderImage.as.image">
+            <de><![CDATA[Als Kopfbild]]></de>
+            <en><![CDATA[As Headerimage]]></en>
+        </locale>
+
+
         <locale name="template.settings.headerLogo">
             <de><![CDATA[Header-Logo]]></de>
             <en><![CDATA[Header logo]]></en>

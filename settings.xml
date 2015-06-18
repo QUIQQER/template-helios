@@ -90,8 +90,16 @@
                                             var="template.settings.pageMenuPos"
                                             />
                                 </text>
-                                <option value="top">Kopfbereich oben</option>
-                                <option value="bottom">Kopfbereich unten</option>
+                                <option value="top">
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.pageMenuPos.top"
+                                            />
+                                </option>
+                                <option value="bottom">
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.pageMenuPos.bottom"
+                                            />
+                                </option>
                             </select>
 
                             <!-- Headerbild-Typ -->
@@ -106,8 +114,16 @@
                                             var="template.settings.pageHeaderImage"
                                             />
                                 </text>
-                                <option value="background">als Hintergrund</option>
-                                <option value="image">als Kopfbild</option>
+                                <option value="background">
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.pageMenuPos.as.background"
+                                            />
+                                </option>
+                                <option value="image">
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.pageMenuPos.as.image"
+                                            />
+                                </option>
                             </select>
 
 
