@@ -1,7 +1,6 @@
 
 {strip}
-{object class="\QUI\Bricks\Manager" assign=BricksManager}
-{assign var=bricks value=$BricksManager->getBricksByArea('startpageContent', $Site)}
+{brickarea assign="bricks" area="startpageContent" Site=$Site}
 
 {foreach from=$bricks item=Brick}
 
