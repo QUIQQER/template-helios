@@ -49,6 +49,9 @@ hr {
         -o-hyphens: auto;
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
+
+    /* Non standard for webkit */
+    word-break: break-word;
 }
 
 #sidebar pre,
