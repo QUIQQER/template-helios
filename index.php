@@ -68,7 +68,8 @@ $Engine->assign(array(
     'headerLogo'      => $headerLogo,
     'headerMenuPos'   => $Project->getConfig('templateHelios.settings.pageMenuPos'),
     'pageHeaderImage' => $Project->getConfig('templateHelios.settings.pageHeaderImage'),
-    'headerFile'      => dirname(__FILE__).'/header.html'
+    'headerFile'      => dirname(__FILE__).'/header.html',
+    'BricksManager' => \QUI\Bricks\Manager::init()
 ));
 
 /**

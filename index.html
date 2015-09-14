@@ -17,6 +17,9 @@
     {assign var=_tmp value=$Template->setAttribute('content-header', false)}
     {assign var=Start value=$Project->firstChild()}
 
+    {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+    {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 
     <link href="{$URL_TPL_DIR}bin/css/unsemantic/unsemantic-grid-responsive.css"
@@ -127,7 +130,31 @@
 
     {include file=$headerFile}
 
+    {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+    {foreach $headerSuffix as $Brick}
+    <div class="container">
+        <div class="">
+            <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
+                {$Brick->create()}
+            </section>
+        </div>
+    </div>
+    {/foreach}
+
     {$Template->getLayout()}
+
+
+        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+        {foreach $footerPrefix as $Brick}
+        <div class="container">
+            <div class="">
+                <section class="page-box-suffix-div {$Brick->getAttribute('classes')}">
+                    {$Brick->create()}
+                </section>
+            </div>
+        </div>
+        {/foreach}
+
 
     <!-- Footer -->
     <div id="footer">

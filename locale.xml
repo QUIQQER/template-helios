@@ -34,8 +34,8 @@
             <en><![CDATA[Template: Helios - Left sidebar]]></en>
         </locale>
         <locale name="area.sidebar.left.description">
-            <de><![CDATA[]]></de>
-            <en><![CDATA[]]></en>
+            <de><![CDATA[Bausteinzone links neben dem Inhalt]]></de>
+            <en><![CDATA[Brickarea to the left of the content]]></en>
         </locale>
 
         <locale name="area.sidebar.right.title">
@@ -55,12 +55,50 @@
             <de><![CDATA[]]></de>
             <en><![CDATA[]]></en>
         </locale>
+
+        <locale name="area.headerSuffix.title">
+            <de><![CDATA[Header Suffix]]></de>
+            <en><![CDATA[Header suffix]]></en>
+        </locale>
+        <locale name="area.headerSuffix.description">
+            <de><![CDATA[Bausteinzone nach dem Header]]></de>
+            <en><![CDATA[Brickarea after the header]]></en>
+        </locale>
+
+        <locale name="area.footerPrefix.title">
+            <de><![CDATA[Footer Prefix]]></de>
+            <en><![CDATA[Footer Prefix]]></en>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
+            <en><![CDATA[Brickarea before the footer]]></en>
+        </locale>
+
+        <locale name="area.prefix.content.title">
+            <de><![CDATA[Prefix Zone]]></de>
+            <en><![CDATA[Prefix area]]></en>
+        </locale>
+        <locale name="area.prefix.content.description">
+            <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
+            <en><![CDATA[Brickarea before the content]]></en>
+        </locale>
+
+        <locale name="area.suffix.content.title">
+            <de><![CDATA[Suffix Zone]]></de>
+            <en><![CDATA[Suffix area]]></en>
+        </locale>
+        <locale name="area.suffix.content.description">
+            <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
+            <en><![CDATA[Brickarea after the content]]></en>
+        </locale>
     </groups>
 
 
     <groups name="quiqqer/template-helios" datatype="php">
 
+
         <!-- template vars -->
+
         <locale name="copyright.text" html="true">
             <de><![CDATA[&copy; Copyright [year]]]></de>
             <en><![CDATA[&copy; Copyright [year]]]></en>
@@ -75,7 +113,9 @@
             <en><![CDATA[Start]]></en>
         </locale>
 
+
         <!-- layouts -->
+
         <locale name="admin.types.startpage">
             <de><![CDATA[Layout - Startseite]]></de>
             <en><![CDATA[Layout - startpage]]></en>

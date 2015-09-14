@@ -1,8 +1,34 @@
 <div class="wrapper style1">
+
+    {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
+    {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+
     <div class="container">
 
         <div class="row" id="content">
+
+            {if !empty( $prefixContentBricks )}
+            {foreach from=$prefixContentBricks item=Brick}
+            <div class="">
+                <div class="">
+                    {$Brick->create()}
+                </div>
+            </div>
+            {/foreach}
+            {/if}
+
             {$Template->getBody()}
+
+            {if !empty( $suffixContentBricks )}
+            {foreach from=$suffixContentBricks item=Brick}
+            <div class="">
+                <div class="">
+                    {$Brick->create()}
+                </div>
+            </div>
+            {/foreach}
+            {/if}
+
         </div>
 
         {brickarea assign="bricks" area="noSidebar" Site=$Site}

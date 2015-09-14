@@ -36,6 +36,32 @@
         <templateAreas>
             <!-- global areas -->
             <areas>
+                <area name="headerSuffix" inheritance="1">
+                    <title>
+                        <locale group="quiqqer/template-helios"
+                                var="area.headerSuffix.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-helios"
+                                var="area.headerSuffix.description"
+                                />
+                    </description>
+                </area>
+
+                <area name="footerPrefix" inheritance="1">
+                    <title>
+                        <locale group="quiqqer/template-helios"
+                                var="area.footerPrefix.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-helios"
+                                var="area.footerPrefix.description"
+                                />
+                    </description>
+                </area>
+
                 <area name="footer" inheritance="1">
                     <title>
                         <locale group="quiqqer/template-helios"
@@ -53,6 +79,8 @@
             <!-- specific type areas -->
             <layouts>
 
+                <!-- startpage -->
+
                 <layout layout="layout/startpage">
                     <area name="startpageContent">
                         <title>
@@ -66,7 +94,35 @@
                             />
                         </description>
                     </area>
+
+                    <area name="prefixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.prefix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.prefix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.suffix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.suffix.content.description"
+                                    />
+                        </description>
+                    </area>
                 </layout>
+
+                <!-- left sidebar -->
 
                 <layout layout="layout/leftSidebar">
                     <area name="leftSidebar" inheritance="1">
@@ -81,7 +137,38 @@
                             />
                         </description>
                     </area>
+
+                    <area name="prefixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.prefix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.prefix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.suffix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.suffix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+
                 </layout>
+
+                <!-- right sidebar -->
+
                 <layout layout="layout/rightSidebar">
                     <area name="rightSidebar" inheritance="1">
                         <title>
@@ -95,7 +182,36 @@
                             />
                         </description>
                     </area>
+
+                    <area name="prefixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.prefix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.prefix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.suffix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.suffix.content.description"
+                                    />
+                        </description>
+                    </area>
                 </layout>
+
+                <!-- no sidebar -->
+
                 <layout layout="layout/noSidebar">
                     <area name="noSidebar" inheritance="1">
                         <title>
@@ -107,6 +223,32 @@
                             <locale group="quiqqer/template-helios"
                                     var="area.sidebar.no.description"
                             />
+                        </description>
+                    </area>
+
+                    <area name="prefixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.prefix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.prefix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.suffix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-helios"
+                                    var="area.suffix.content.description"
+                                    />
                         </description>
                     </area>
                 </layout>

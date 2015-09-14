@@ -1008,6 +1008,21 @@
 /* Content                                                                       */
 /*********************************************************************************/
 
+.page-box-prefix-div {
+	padding: 20px 0;
+	margin-top: 20px;
+}
+
+.page-box-suffix-div {
+	margin-bottom: 20px;
+	padding: 20px 0;
+}
+
+
+.quiqqer-breadcrumb * {
+	list-style: none !important;
+}
+
 	#content
 	{
 	}
