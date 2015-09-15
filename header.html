@@ -1,8 +1,10 @@
 <div id="header"
-     {if $pageHeaderImage != 'image'}
-     style="background-image: url('{image src=$Site->getAttribute('image_emotion') rewrited=true onlysrc=true}');"
-     {else}
-     class="header-type-image"
+    {if $pageHeaderImage != 'image'}
+        {if $Site->getAttribute('image_emotion')}
+            style="background-image: url('{image src=$Site->getAttribute('image_emotion') rewrited=true onlysrc=true}');"
+        {/if}
+    {else}
+        class="header-type-image"
     {/if}
 >
 
@@ -43,7 +45,7 @@
         }
     </nav>
 
-    {if $pageHeaderImage == 'image'}
+    {if $pageHeaderImage == 'image' && $Site->getAttribute('image_emotion')}
         {image src=$Site->getAttribute('image_emotion') class="header-image"}
     {/if}
 
