@@ -9,11 +9,7 @@
             <div class="8u" id="content">
                 {if !empty( $prefixContentBricks )}
                 {foreach from=$prefixContentBricks item=Brick}
-                <div class="">
-                    <div class="">
-                        {$Brick->create()}
-                    </div>
-                </div>
+                    {$Brick->create()}
                 {/foreach}
                 {/if}
 
@@ -21,11 +17,7 @@
 
                 {if !empty( $suffixContentBricks )}
                 {foreach from=$suffixContentBricks item=Brick}
-                <div class="">
-                    <div class="">
-                        {$Brick->create()}
-                    </div>
-                </div>
+                    {$Brick->create()}
                 {/foreach}
                 {/if}
             </div>

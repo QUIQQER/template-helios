@@ -76,8 +76,9 @@ hr {
 
 .quiqqer-bricks-sidebox1,
 .quiqqer-bricks-sidebox2,
-.quiqqer-bricks-sidebox3, {
+.quiqqer-bricks-sidebox3 {
     padding-top: 2em;
+    width: 100%;
 }
 
 .quiqqer-bricks-sidebox1 .image,

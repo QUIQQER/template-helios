@@ -141,19 +141,20 @@
     </div>
     {/foreach}
 
+
     {$Template->getLayout()}
 
 
-        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-        {foreach $footerPrefix as $Brick}
-        <div class="container">
-            <div class="">
-                <section class="page-box-suffix-div {$Brick->getAttribute('classes')}">
-                    {$Brick->create()}
-                </section>
-            </div>
+    {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+    {foreach $footerPrefix as $Brick}
+    <div class="container">
+        <div class="">
+            <section class="page-box-suffix-div {$Brick->getAttribute('classes')}">
+                {$Brick->create()}
+            </section>
         </div>
-        {/foreach}
+    </div>
+    {/foreach}
 
 
     <!-- Footer -->
