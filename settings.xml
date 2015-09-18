@@ -49,17 +49,19 @@
                         </text>
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
 
-                        <settings title="templateHelios.settings" name="templateHelios.settings">
-                            <!-- maximale Breite -->
+                        <settings title="templateHelios.settings" name="templateHelios.settings.general">
+
                             <title>
                                 <locale group="quiqqer/template-helios"
-                                        var="template.settings.pageMaxWidth"
+                                        var="templateHelios.settings.general.title"
                                         />
                             </title>
+
+                            <!-- maximale Breite -->
                             <input conf="templateHelios.settings.pageMaxWidth" type="number">
                                 <text>
                                     <locale group="quiqqer/template-helios"
-                                            var="template.settings.pageMaxWidth"
+                                            var="templateHelios.settings.pageMaxWidth"
                                             />
                                 </text>
                             </input>
@@ -67,21 +69,23 @@
                             <!-- Hintergrund -->
                             <title>
                                 <locale group="quiqqer/template-helios"
-                                        var="template.settings.pageBackground"
+                                        var="templateHelios.settings.pageBackground"
                                         />
                             </title>
                             <input conf="templateHelios.settings.pageBackground" class="media-image">
                                 <text>
                                     <locale group="quiqqer/template-helios"
-                                            var="template.settings.pageBackground"
+                                            var="templateHelios.settings.pageBackground"
                                             />
                                 </text>
                             </input>
+                        </settings>
 
+                        <settings title="templateHelios.settings" name="templateHelios.settings.header">
                             <!-- Menüposition -->
                             <title>
                                 <locale group="quiqqer/template-helios"
-                                        var="template.settings.pageMenuPos"
+                                        var="template.settings.header.title"
                                         />
                             </title>
                             <select conf="templateHelios.settings.pageMenuPos">
@@ -103,11 +107,7 @@
                             </select>
 
                             <!-- Headerbild-Typ -->
-                            <title>
-                                <locale group="quiqqer/template-helios"
-                                        var="template.settings.pageHeaderImage"
-                                        />
-                            </title>
+
                             <select conf="templateHelios.settings.pageHeaderImage">
                                 <text>
                                     <locale group="quiqqer/template-helios"
@@ -116,22 +116,16 @@
                                 </text>
                                 <option value="background">
                                     <locale group="quiqqer/template-helios"
-                                            var="template.settings.pageMenuPos.as.background"
+                                            var="template.settings.pageHeaderImage.as.background"
                                             />
                                 </option>
                                 <option value="image">
                                     <locale group="quiqqer/template-helios"
-                                            var="template.settings.pageMenuPos.as.image"
+                                            var="template.settings.pageHeaderImage.as.image"
                                             />
                                 </option>
                             </select>
 
-
-                            <title>
-                                <locale group="quiqqer/template-helios"
-                                        var="template.settings.title"
-                                        />
-                            </title>
                             <input conf="templateHelios.settings.headerLogo" class="media-image">
                                 <text>
                                     <locale group="quiqqer/template-helios"
@@ -146,6 +140,15 @@
                                             />
                                 </text>
                             </input>
+                        </settings>
+
+                        <settings title="templateHelios.settings" name="templateHelios.settings.colors">
+                            <!-- Color settings -->
+                            <title>
+                                <locale group="quiqqer/template-helios"
+                                        var="template.settings.colors.title"
+                                        />
+                            </title>
                             <input conf="templateHelios.settings.controlColor" type="color">
                                 <text>
                                     <locale group="quiqqer/template-helios"

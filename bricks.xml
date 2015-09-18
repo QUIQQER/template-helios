@@ -82,6 +82,7 @@
                 <!-- startpage -->
 
                 <layout layout="layout/startpage">
+                    <!--
                     <area name="startpageContent">
                         <title>
                             <locale group="quiqqer/template-helios"
@@ -94,6 +95,7 @@
                             />
                         </description>
                     </area>
+                    -->
 
                     <area name="prefixContentBricks" inheritance="1">
                         <title>
@@ -213,18 +215,6 @@
                 <!-- no sidebar -->
 
                 <layout layout="layout/noSidebar">
-                    <area name="noSidebar" inheritance="1">
-                        <title>
-                            <locale group="quiqqer/template-helios"
-                                    var="area.sidebar.no.title"
-                            />
-                        </title>
-                        <description>
-                            <locale group="quiqqer/template-helios"
-                                    var="area.sidebar.no.description"
-                            />
-                        </description>
-                    </area>
 
                     <area name="prefixContentBricks" inheritance="1">
                         <title>

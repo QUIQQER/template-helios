@@ -21,6 +21,10 @@ hr {
 .quiqqer-bricks-sidebox1 h2,
 .quiqqer-bricks-sidebox1 h3 {
     margin: 0 0 0.8em !important;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #content header h2,
@@ -79,6 +83,18 @@ hr {
 .quiqqer-bricks-sidebox3 {
     padding-top: 2em;
     width: 100%;
+}
+
+.quiqqer-bricks-sidebox1-content,
+.quiqqer-bricks-sidebox2-content,
+.quiqqer-bricks-sidebox3-content {
+    width: 100%;
+}
+
+.quiqqer-bricks-sidebox1-content p,
+.quiqqer-bricks-sidebox2-content p,
+.quiqqer-bricks-sidebox3-content p {
+    min-height: initial !important;
 }
 
 .quiqqer-bricks-sidebox1 .image,
