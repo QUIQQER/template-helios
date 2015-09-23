@@ -24,7 +24,9 @@
                 {/foreach}
                 {/if}
 
-                {$Template->getBody()}
+                <div style="padding-bottom: 48px; {if !empty ($prefixContentBricks)}padding-top: 48px;{/if}">
+                    {$Template->getBody()}
+                </div>
 
                 {if !empty( $suffixContentBricks )}
                 {foreach from=$suffixContentBricks item=Brick}
