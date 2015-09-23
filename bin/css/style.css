@@ -701,7 +701,6 @@
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
-		color: #fff;
 		text-align: center;
         padding: 2.5em 0 2em 0;
 		cursor: default;
@@ -1106,7 +1105,6 @@
 		overflow: hidden;
 		padding: 6em 0 6em 0;
 		/*background: #2b252c;*/
-		color: #fff;
 	}
 
 		#footer .icon.circled
@@ -1114,20 +1112,15 @@
 			background: #fff;
 			color: #2b252c;
 		}
+		
+		#footer .fa{
+			color: #fff !important;
+		}
 
 		#footer header
 		{
 			text-align: center;
 			cursor: default;
-		}
-		
-		#footer h2,
-		#footer h3,
-		#footer h4,
-		#footer h5,
-		#footer h6
-		{
-			color: #fff;
 		}
 
         #footer .quiqqer-bricks-banner {

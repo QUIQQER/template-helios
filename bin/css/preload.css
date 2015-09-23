@@ -2,12 +2,12 @@
 hr {
     clear: both;
 }
-
+/*
 #nav a span,
 #header h1 a {
     color: #fff;
 }
-
+*/
 #content h1 {
     font-size: 2.85em !important;
 }
@@ -83,6 +83,12 @@ hr {
 .quiqqer-bricks-sidebox3 {
     padding-top: 2em;
     width: 100%;
+}
+
+.quiqqer-bricks-sidebox-article {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
 }
 
 .quiqqer-bricks-sidebox1-content,
@@ -243,3 +249,8 @@ section.quiqqer-gallery-grid-list {
     margin-top: 0;
     padding-left: 2em;
 }
+
+.article-button {
+    margin-top: auto;
+}
+

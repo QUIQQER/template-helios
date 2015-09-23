@@ -186,9 +186,21 @@
             <de><![CDATA[Hintergrundfarbe der Bedienelementen]]></de>
             <en><![CDATA[Backgroundcolor of the controls]]></en>
         </locale>
-        <locale name="template.settings.colorFooter">
+        <locale name="template.settings.colorFooterBackground">
             <de><![CDATA[Hintergrundfarbe des Footers]]></de>
             <en><![CDATA[Backgroundcolor of the footer]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterFont">
+            <de><![CDATA[Fontfarbe des Footers]]></de>
+            <en><![CDATA[Font color of the footer]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLink">
+            <de><![CDATA[Hyperlinkfarbe im Footer]]></de>
+            <en><![CDATA[Hyperlinks color in the footer]]></en>
+        </locale>
+        <locale name="template.settings.headerColorFont">
+            <de><![CDATA[Fontfarbe des Headers]]></de>
+            <en><![CDATA[Font color of the header]]></en>
         </locale>
 
     </groups>

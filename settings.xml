@@ -32,9 +32,21 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#df7366</defaultvalue>
                     </conf>
-                    <conf name="footerColor">
+                    <conf name="footerColorBackground">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#2b252c</defaultvalue>
+                    </conf>
+                    <conf name="footerColorFont">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+                    <conf name="footerColorLink">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+                    <conf name="headerColorFont">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
                     </conf>
                 </section>
             </config>
@@ -156,10 +168,31 @@
                                             />
                                 </text>
                             </input>
-                            <input conf="templateHelios.settings.footerColor" type="color">
+                            <input conf="templateHelios.settings.footerColorBackground" type="color">
                                 <text>
                                     <locale group="quiqqer/template-helios"
-                                            var="template.settings.colorFooter"
+                                            var="template.settings.colorFooterBackground"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templateHelios.settings.footerColorFont" type="color">
+                                <text>
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.colorFooterFont"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templateHelios.settings.footerColorLink" type="color">
+                                <text>
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.colorFooterLink"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templateHelios.settings.headerColorFont" type="color">
+                                <text>
+                                    <locale group="quiqqer/template-helios"
+                                            var="template.settings.headerColorFont"
                                             />
                                 </text>
                             </input>

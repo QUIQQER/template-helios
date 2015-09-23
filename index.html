@@ -91,7 +91,31 @@
         }
 
         #footer {
-            background: {$footerColor};
+            background: {$footerColorBackground};
+            color: {$footerColorFont};
+        }
+
+        #footer a {
+        color: {$footerColorLink};
+        }
+
+        #footer h2,
+        #footer h3,
+        #footer h4,
+        #footer h5,
+        #footer h6
+        {
+            color: {$footerColorFont};
+        }
+
+        #footer form label {
+        color: {$footerColorFont};
+        }
+
+        #header,
+        #nav a span,
+        #header h1 a {
+            color: {$headerColorFont};
         }
 
         {if $Project->getConfig('templateHelios.settings.pageMaxWidth')}
@@ -116,6 +140,7 @@
                 position: relative !important;
             }
         {/if}
+
 
     </style>
 

@@ -27,20 +27,38 @@ if ($Project->getConfig('templateHelios.settings.pageBackground')) {
  * colors
  */
 
-$footerColor = '#2b252c';
+$footerColorBackground = '#2b252c';
+$footerColorFont = '#ffffff';
+$footerColorLink = '#ffffff';
+$headerColorFont = '#ffffff';
 $controlColor = '#ef8376';
 
 if ($Project->getConfig('templateHelios.settings.controlColor')) {
     $controlColor = $Project->getConfig('templateHelios.settings.controlColor');
 }
 
-if ($Project->getConfig('templateHelios.settings.footerColor')) {
-    $footerColor = $Project->getConfig('templateHelios.settings.footerColor');
+if ($Project->getConfig('templateHelios.settings.footerColorBackground')) {
+    $footerColorBackground = $Project->getConfig('templateHelios.settings.footerColorBackground');
+}
+
+if ($Project->getConfig('templateHelios.settings.footerColorFont')) {
+    $footerColorFont = $Project->getConfig('templateHelios.settings.footerColorFont');
+}
+
+if ($Project->getConfig('templateHelios.settings.footerColorLink')) {
+    $footerColorLink = $Project->getConfig('templateHelios.settings.footerColorLink');
+}
+
+if ($Project->getConfig('templateHelios.settings.headerColorFont')) {
+    $headerColorFont = $Project->getConfig('templateHelios.settings.headerColorFont');
 }
 
 $Engine->assign(array(
     'controlColor' => $controlColor,
-    'footerColor'  => $footerColor,
+    'footerColorBackground'  => $footerColorBackground,
+    'footerColorFont'   => $footerColorFont,
+    'footerColorLink'  => $footerColorLink,
+    'headerColorFont'   => $headerColorFont,
     'Background'   => $Background
 ));
 
