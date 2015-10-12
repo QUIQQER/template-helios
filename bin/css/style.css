@@ -219,6 +219,7 @@
 		header
 		{
 			margin: 0 0 1em 0;
+            max-width: 100%;
 		}
 
 			header > p
@@ -675,8 +676,10 @@
 	.wrapper
 	{
 		background: #fff;
+        float: left;
 		margin: 0 0 2em 0;
 		padding: 6em 0 6em 0;
+        width: 100%;
 	}
 	
 		.wrapper.style1
@@ -698,7 +701,6 @@
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
-		color: #fff;
 		text-align: center;
         padding: 2.5em 0 2em 0;
 		cursor: default;
@@ -763,6 +765,10 @@
 			{
 				color: inherit;
 			}
+
+            #logo {
+                max-width: 70%;
+            }
 	
 		#header header > p
 		{
@@ -806,6 +812,27 @@
 			{
 				background: rgba(192,192,192,0.35);
 			}
+
+            .header-image {
+                max-width: 100%;
+            }
+
+        .header-type-image .inner {
+            padding: 0 20px !important;
+            text-align: left;
+        }
+
+        .header-type-image .inner header {
+            width: 100%;
+        }
+
+        .header-type-image .inner header h1 {
+            float: left;
+        }
+
+        .header-type-image .inner header p {
+            float: right;
+        }
 
 /*********************************************************************************/
 /* Nav                                                                           */
@@ -980,6 +1007,21 @@
 /* Content                                                                       */
 /*********************************************************************************/
 
+.page-box-prefix-div {
+	padding: 20px 0;
+	margin-top: 20px;
+}
+
+.page-box-suffix-div {
+	margin-bottom: 20px;
+	padding: 20px 0;
+}
+
+
+.quiqqer-breadcrumb * {
+	list-style: none !important;
+}
+
 	#content
 	{
 	}
@@ -1006,6 +1048,11 @@
         #content a.content-button,
         #content a.button {
             text-decoration: none;
+        }
+
+        #content ul {
+            list-style-type: circle;
+            padding-left: 1em;
         }
 
 		
@@ -1058,7 +1105,6 @@
 		overflow: hidden;
 		padding: 6em 0 6em 0;
 		/*background: #2b252c;*/
-		color: #fff;
 	}
 
 		#footer .icon.circled
@@ -1066,20 +1112,15 @@
 			background: #fff;
 			color: #2b252c;
 		}
+		
+		#footer .fa{
+			color: #fff !important;
+		}
 
 		#footer header
 		{
 			text-align: center;
 			cursor: default;
-		}
-		
-		#footer h2,
-		#footer h3,
-		#footer h4,
-		#footer h5,
-		#footer h6
-		{
-			color: #fff;
 		}
 
         #footer .quiqqer-bricks-banner {

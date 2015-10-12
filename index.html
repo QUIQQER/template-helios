@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!--
     Helios by HTML5 UP
@@ -15,6 +16,9 @@
     {$Template->getHeader()}
     {assign var=_tmp value=$Template->setAttribute('content-header', false)}
     {assign var=Start value=$Project->firstChild()}
+
+    {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+    {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 
@@ -87,81 +91,125 @@
         }
 
         #footer {
-            background: {$footerColor};
+            background: {$footerColorBackground};
+            color: {$footerColorFont};
         }
+
+        #footer a {
+        color: {$footerColorLink};
+        }
+
+        #footer h2,
+        #footer h3,
+        #footer h4,
+        #footer h5,
+        #footer h6
+        {
+            color: {$footerColorFont};
+        }
+
+        #footer form label {
+        color: {$footerColorFont};
+        }
+
+        #header,
+        #nav a span,
+        #header h1 a {
+            color: {$headerColorFont};
+        }
+
+        {if $Project->getConfig('templateHelios.settings.pageMaxWidth')}
+        .page {
+            background: #fff;
+        }
+
+        .container {
+            max-width: {$Project->getConfig('templateHelios.settings.pageMaxWidth')}px;
+            padding: 0 20px;
+        }
+        {/if}
+
+        {if $Background}
+            body {
+                background-image : url('{$Background->getSizeCacheUrl()}') !important;
+            }
+        {/if}
+
+        {if $headerMenuPos == 'bottom'}
+            #nav {
+                position: relative !important;
+            }
+        {/if}
+
+
     </style>
 
 </head>
-<body class="{$bodyClass}">
+<body class="{$bodyClass} page-{$Site->getId()}">
 
-<!-- Header -->
-<div id="header"
-     style="background-image: url('{image src=$Site->getAttribute('image_emotion') rewrited=true onlysrc=true}');"
->
+{if $Project->getConfig('templateHelios.settings.pageMaxWidth')}
+    <div class="page" style="margin: 0 auto; max-width: {$Project->getConfig('templateHelios.settings.pageMaxWidth')}px">
+{else}
+    <div class="page">
+{/if}
 
-    <!-- Inner -->
-    <div class="inner">
-        <header>
-            <h1>
-                <a href="{url id=1}" id="logo" title="{$headerText|escape:"html"}">
-                {if $headerLogo}
-                    {image src=$headerLogo}
-                {else}
-                    {$headerText}
-                {/if}
-                </a>
-            </h1>
-            <hr />
-            <p>
-                {$Start->getAttribute('short')}
-            </p>
-        </header>
-        {if $bodyClass == 'homepage'}
-        <footer>
-            <a href="" class="button circled scrolly">
-                {locale group="quiqqer/template-helios" var="startpage.start.button"}
-            </a>
-        </footer>
-        {/if}
-    </div>
+    {include file=$headerFile}
 
-    <!-- Nav -->
-    <nav id="nav">
-        {include file="`$TPL_DIR`menu.html"
-            Site=$Project->firstChild()
-            ActiveSite=$Site
-        }
-    </nav>
-</div>
-
-{$Template->getLayout()}
-
-<!-- Footer -->
-<div id="footer">
+    {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+    {foreach $headerSuffix as $Brick}
     <div class="container">
-
-        {brickarea assign="bricks" area="footer" Site=$Site}
-        {foreach from=$bricks item=Brick}
-        <div class="row">
-            <div class="12u">
+        <div class="">
+            <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
                 {$Brick->create()}
-            </div>
+            </section>
         </div>
-        <hr />
-        {/foreach}
+    </div>
+    {/foreach}
 
-        <div class="row">
-            <div class="12u">
 
-                <!-- Copyright -->
-                <div class="copyright">
-                    {locale group="quiqqer/template-helios" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+    {$Template->getLayout()}
+
+
+    {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+    {foreach $footerPrefix as $Brick}
+    <div class="container">
+        <div class="">
+            <section class="page-box-suffix-div {$Brick->getAttribute('classes')}">
+                {$Brick->create()}
+            </section>
+        </div>
+    </div>
+    {/foreach}
+
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+
+            {brickarea assign="bricks" area="footer" Site=$Site}
+            {foreach from=$bricks item=Brick}
+            <div class="row">
+                <div class="12u">
+                    {$Brick->create()}
+                </div>
+            </div>
+            <hr />
+            {/foreach}
+
+            <div class="row">
+                <div class="12u">
+
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        {locale group="quiqqer/template-helios" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
     </div>
+
 </div>
 
 <script src="{$URL_TPL_DIR}bin/js/jquery.min.js"></script>

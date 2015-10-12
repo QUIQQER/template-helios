@@ -2,12 +2,12 @@
 hr {
     clear: both;
 }
-
+/*
 #nav a span,
 #header h1 a {
     color: #fff;
 }
-
+*/
 #content h1 {
     font-size: 2.85em !important;
 }
@@ -21,6 +21,10 @@ hr {
 .quiqqer-bricks-sidebox1 h2,
 .quiqqer-bricks-sidebox1 h3 {
     margin: 0 0 0.8em !important;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #content header h2,
@@ -40,6 +44,20 @@ hr {
     text-decoration: none;
 }
 
+#content h1,
+#content h2,
+#content h3,
+#content h4 {
+    hyphens: auto;
+        -moz-hyphens: auto;
+        -o-hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+}
+
 #sidebar pre,
 #content pre {
     max-width: 100%;
@@ -48,14 +66,41 @@ hr {
 
 #sidebar img,
 #content img {
+    height: auto !important;
     max-width: 100%;
 }
 
+#content article {
+    margin-bottom: 1em;
+}
+
+#content .content-short {
+    margin-bottom: 1em;
+}
 
 .quiqqer-bricks-sidebox1,
 .quiqqer-bricks-sidebox2,
-.quiqqer-bricks-sidebox3, {
+.quiqqer-bricks-sidebox3 {
     padding-top: 2em;
+    width: 100%;
+}
+
+.quiqqer-bricks-sidebox-article {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiqqer-bricks-sidebox1-content,
+.quiqqer-bricks-sidebox2-content,
+.quiqqer-bricks-sidebox3-content {
+    width: 100%;
+}
+
+.quiqqer-bricks-sidebox1-content p,
+.quiqqer-bricks-sidebox2-content p,
+.quiqqer-bricks-sidebox3-content p {
+    min-height: initial !important;
 }
 
 .quiqqer-bricks-sidebox1 .image,
@@ -94,6 +139,18 @@ hr {
     padding-top: 66%;
 }
 
+#content ul,
+#sidebar ul {
+    list-style: inside circle !important;
+    padding-left: 0.5em !important;
+}
+
+#content ul ul,
+#sidebar ul ul {
+    list-style: inside circle !important;
+    padding-left: 2em !important;
+}
+
 
 @media screen and (min-width: 840px) {
     .quiqqer-bricks-sidebox2 p {
@@ -118,6 +175,9 @@ hr {
     background: rgba(72, 57, 73, 0.5);
 }
 
+.content-short {
+    font-style: italic;
+}
 
 /*********************************************************************************/
 /* QUIQQER Controls
@@ -179,10 +239,6 @@ section.quiqqer-gallery-grid-list {
 }
 
 /* sitemap */
-.qui-sitetypes-sitemap ul {
-    list-style: inside circle;
-    padding-left: 2em;
-}
 
 .qui-sitetypes-sitemap-block-category ul {
     list-style: inside circle;
@@ -193,3 +249,8 @@ section.quiqqer-gallery-grid-list {
     margin-top: 0;
     padding-left: 2em;
 }
+
+.article-button {
+    margin-top: auto;
+}
+

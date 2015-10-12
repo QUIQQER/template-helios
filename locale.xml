@@ -20,22 +20,13 @@
             <en><![CDATA[Footer Bereich]]></en>
         </locale>
 
-        <locale name="area.startpageContent.title">
-            <de><![CDATA[Template: Helios - Inhalt]]></de>
-            <en><![CDATA[Template: Helios - Content]]></en>
-        </locale>
-        <locale name="area.startpageContent.description">
-            <de><![CDATA[Inhaltsbereich eines Startseiten Layouts]]></de>
-            <en><![CDATA[]]></en>
-        </locale>
-
         <locale name="area.sidebar.left.title">
             <de><![CDATA[Template: Helios - Linke Sidebar]]></de>
             <en><![CDATA[Template: Helios - Left sidebar]]></en>
         </locale>
         <locale name="area.sidebar.left.description">
-            <de><![CDATA[]]></de>
-            <en><![CDATA[]]></en>
+            <de><![CDATA[Bausteinzone links neben dem Inhalt]]></de>
+            <en><![CDATA[Brickarea to the left of the content]]></en>
         </locale>
 
         <locale name="area.sidebar.right.title">
@@ -47,20 +38,49 @@
             <en><![CDATA[]]></en>
         </locale>
 
-        <locale name="area.sidebar.no.title">
-            <de><![CDATA[Template: Helios - Inhalt]]></de>
-            <en><![CDATA[Template: Helios - Content]]></en>
+        <locale name="area.headerSuffix.title">
+            <de><![CDATA[Header Suffix]]></de>
+            <en><![CDATA[Header suffix]]></en>
         </locale>
-        <locale name="area.sidebar.no.description">
-            <de><![CDATA[]]></de>
-            <en><![CDATA[]]></en>
+        <locale name="area.headerSuffix.description">
+            <de><![CDATA[Bausteinzone nach dem Header]]></de>
+            <en><![CDATA[Brickarea after the header]]></en>
+        </locale>
+
+        <locale name="area.footerPrefix.title">
+            <de><![CDATA[Footer Prefix]]></de>
+            <en><![CDATA[Footer Prefix]]></en>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
+            <en><![CDATA[Brickarea before the footer]]></en>
+        </locale>
+
+        <locale name="area.prefix.content.title">
+            <de><![CDATA[Prefix Zone]]></de>
+            <en><![CDATA[Prefix area]]></en>
+        </locale>
+        <locale name="area.prefix.content.description">
+            <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
+            <en><![CDATA[Brickarea before the content]]></en>
+        </locale>
+
+        <locale name="area.suffix.content.title">
+            <de><![CDATA[Suffix Zone]]></de>
+            <en><![CDATA[Suffix area]]></en>
+        </locale>
+        <locale name="area.suffix.content.description">
+            <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
+            <en><![CDATA[Brickarea after the content]]></en>
         </locale>
     </groups>
 
 
     <groups name="quiqqer/template-helios" datatype="php">
 
+
         <!-- template vars -->
+
         <locale name="copyright.text" html="true">
             <de><![CDATA[&copy; Copyright [year]]]></de>
             <en><![CDATA[&copy; Copyright [year]]]></en>
@@ -75,7 +95,9 @@
             <en><![CDATA[Start]]></en>
         </locale>
 
+
         <!-- layouts -->
+
         <locale name="admin.types.startpage">
             <de><![CDATA[Layout - Startseite]]></de>
             <en><![CDATA[Layout - startpage]]></en>
@@ -93,11 +115,59 @@
             <en><![CDATA[Layout - No sidebar]]></en>
         </locale>
 
+
         <!-- template settings -->
+
         <locale name="template.settings.title">
             <de><![CDATA[Template: Helios-Einstellungen]]></de>
             <en><![CDATA[Template: Helios settings]]></en>
         </locale>
+
+        <locale name="templateHelios.settings.general.title">
+            <de><![CDATA[Allgemeine Einstellungen]]></de>
+            <en><![CDATA[General settings]]></en>
+        </locale>
+
+        <locale name="templateHelios.settings.pageMaxWidth">
+            <de><![CDATA[Maximale Seitenbreite]]></de>
+            <en><![CDATA[Max page width]]></en>
+        </locale>
+        <locale name="templateHelios.settings.pageBackground">
+            <de><![CDATA[Seitenhintergrundbild]]></de>
+            <en><![CDATA[Page background image]]></en>
+        </locale>
+
+        <locale name="template.settings.header.title">
+            <de><![CDATA[Header Einstellungen]]></de>
+            <en><![CDATA[Header settings]]></en>
+        </locale>
+        <locale name="template.settings.pageMenuPos">
+            <de><![CDATA[Menü Position]]></de>
+            <en><![CDATA[Menu position]]></en>
+        </locale>
+        <locale name="template.settings.pageMenuPos.bottom">
+            <de><![CDATA[Kopfbereich unten]]></de>
+            <en><![CDATA[Menu to the bottom]]></en>
+        </locale>
+        <locale name="template.settings.pageMenuPos.top">
+            <de><![CDATA[Kopfbereich oben]]></de>
+            <en><![CDATA[Menu to the top]]></en>
+        </locale>
+
+
+        <locale name="template.settings.pageHeaderImage">
+            <de><![CDATA[Headerbild-Typ]]></de>
+            <en><![CDATA[headerimage type]]></en>
+        </locale>
+        <locale name="template.settings.pageHeaderImage.as.background">
+            <de><![CDATA[Als Hintergrund]]></de>
+            <en><![CDATA[As background]]></en>
+        </locale>
+        <locale name="template.settings.pageHeaderImage.as.image">
+            <de><![CDATA[Als Kopfbild]]></de>
+            <en><![CDATA[As Headerimage]]></en>
+        </locale>
+
         <locale name="template.settings.headerLogo">
             <de><![CDATA[Header-Logo]]></de>
             <en><![CDATA[Header logo]]></en>
@@ -106,13 +176,31 @@
             <de><![CDATA[Header-Text]]></de>
             <en><![CDATA[Header text]]></en>
         </locale>
+
+
+        <locale name="template.settings.colors.title">
+            <de><![CDATA[Farbeinstellungen]]></de>
+            <en><![CDATA[Color settings]]></en>
+        </locale>
         <locale name="template.settings.colorControls">
             <de><![CDATA[Hintergrundfarbe der Bedienelementen]]></de>
             <en><![CDATA[Backgroundcolor of the controls]]></en>
         </locale>
-        <locale name="template.settings.colorFooter">
+        <locale name="template.settings.colorFooterBackground">
             <de><![CDATA[Hintergrundfarbe des Footers]]></de>
             <en><![CDATA[Backgroundcolor of the footer]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterFont">
+            <de><![CDATA[Fontfarbe des Footers]]></de>
+            <en><![CDATA[Font color of the footer]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLink">
+            <de><![CDATA[Hyperlinkfarbe im Footer]]></de>
+            <en><![CDATA[Hyperlinks color in the footer]]></en>
+        </locale>
+        <locale name="template.settings.headerColorFont">
+            <de><![CDATA[Fontfarbe des Headers]]></de>
+            <en><![CDATA[Font color of the header]]></en>
         </locale>
 
     </groups>

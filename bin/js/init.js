@@ -356,8 +356,15 @@
 
 						$t.onVisible(function()
                         {
+                            var parentWidth = $window.width();
+
+                            if ( $t.parent('.row').length ) {
+                                parentWidth = $t.parent('.row').width();
+                            }
+
 							var	timerId,
-								limit = $items.length - Math.ceil($window.width() / itemWidth);
+//								limit = $items.length - Math.ceil($window.width() / itemWidth);
+								limit = $items.length - Math.ceil(parentWidth / itemWidth);
 
 							timerId = window.setInterval(function()
                             {
@@ -387,8 +394,14 @@
 				// Main.
 					$t._update = function()
                     {
+                        var parentWidth = $window.width();
+
+                        if ( $t.parent('.row').length ) {
+                            parentWidth = $t.parent('.row').width();
+                        }
+
 						pos = 0;
-						rightLimit = (-1 * reelWidth) + $window.width();
+						rightLimit = (-1 * reelWidth) + parentWidth;
 						leftLimit = 0;
 						$t._updatePos();
 					};

@@ -55,7 +55,7 @@ require.config({
 });
 
 
-require(['qui/QUI', 'helios-init' ], function()
+require(['qui/QUI', 'helios-init' ], function(QUI)
 {
     "use strict";
 
@@ -71,5 +71,25 @@ require(['qui/QUI', 'helios-init' ], function()
         event.stop();
         new Fx.Scroll( window ).toElement( Next );
     });
+
+    //
+    //QUI.setAttribute( 'control-loader-type', 'ball-clip-rotate' );
+    ////QUI.setAttribute( 'control-loader-color', 'red' );
+    //
+    //require(['qui/controls/loader/Loader'], function(QUILoader)
+    //{
+    //    var Load = new QUILoader({
+    //        styles : {
+    //            zIndex    : 1000,
+    //            position  : 'fixed'
+    //        }
+    //    }).inject( document.body );
+    //
+    //    Load.show();
+    //
+    //    (function() {
+    //        Load.hide();
+    //    }).delay( 4000 );
+    //});
 
 });

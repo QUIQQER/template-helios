@@ -1,7 +1,9 @@
 
+{assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
+{assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+
 {strip}
-{object class="\QUI\Bricks\Manager" assign=BricksManager}
-{assign var=bricks value=$BricksManager->getBricksByArea('startpageContent', $Site)}
+{brickarea assign="bricks" area="startpageContent" Site=$Site}
 
 {foreach from=$bricks item=Brick}
 
@@ -35,4 +37,23 @@
 {/foreach}
 {/strip}
 
-{$Template->getBody()}
+<div class="wrapper style1">
+    <div class="container">
+        <div class="row" id="content">
+
+            {if !empty( $prefixContentBricks )}
+            {foreach from=$prefixContentBricks item=Brick}
+                {$Brick->create()}
+            {/foreach}
+            {/if}
+
+            {$Template->getBody()}
+
+            {if !empty( $suffixContentBricks )}
+            {foreach from=$suffixContentBricks item=Brick}
+                {$Brick->create()}
+            {/foreach}
+            {/if}
+        </div>
+    </div>
+</div>
