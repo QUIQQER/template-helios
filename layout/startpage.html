@@ -37,23 +37,49 @@
 {/foreach}
 {/strip}
 
+
+{if !empty( $prefixContentBricks )}
+    {foreach from=$prefixContentBricks item=Brick}
+        {if $Brick->getType() == 'QUI\TemplateHelios\Controls\StartpageCarousel' ||
+            $Brick->getType() == 'QUI\Bricks\Controls\Banner'
+        }
+            {$Brick->create()}
+        {else}
+            <section class="wrapper style1">
+                <div class="container">
+                    <div class="row">
+                        {$Brick->create()}
+                    </div>
+                </div>
+            </section>
+        {/if}
+    {/foreach}
+{/if}
+
+
 <div class="wrapper style1">
     <div class="container">
         <div class="row" id="content">
-
-            {if !empty( $prefixContentBricks )}
-            {foreach from=$prefixContentBricks item=Brick}
-                {$Brick->create()}
-            {/foreach}
-            {/if}
-
             {$Template->getBody()}
-
-            {if !empty( $suffixContentBricks )}
-            {foreach from=$suffixContentBricks item=Brick}
-                {$Brick->create()}
-            {/foreach}
-            {/if}
         </div>
     </div>
 </div>
+
+
+{if !empty( $suffixContentBricks )}
+    {foreach from=$suffixContentBricks item=Brick}
+        {if $Brick->getType() == 'QUI\TemplateHelios\Controls\StartpageCarousel' ||
+            $Brick->getType() == 'QUI\Bricks\Controls\Banner'
+        }
+            {$Brick->create()}
+        {else}
+            <section class="wrapper style1">
+                <div class="container">
+                    <div class="row">
+                        {$Brick->create()}
+                    </div>
+                </div>
+            </section>
+        {/if}
+    {/foreach}
+{/if}
