@@ -21,10 +21,12 @@ hr {
 .quiqqer-bricks-sidebox1 h2,
 .quiqqer-bricks-sidebox1 h3 {
     margin: 0 0 0.8em !important;
+    /*
     overflow: hidden;
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
+    */
 }
 
 #content header h2,
