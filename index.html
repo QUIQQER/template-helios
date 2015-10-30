@@ -157,13 +157,21 @@
 
     {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
     {foreach $headerSuffix as $Brick}
-    <div class="container">
-        <div class="">
-            <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
-                {$Brick->create()}
-            </section>
-        </div>
-    </div>
+        {if $Brick->getType() == 'QUI\Controls\Breadcrumb'}
+            <div class="container wrapper-mini">
+                <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
+                    {$Brick->create()}
+                </section>
+            </div>
+        {else}
+            <div class="wrapper">
+                <div class="container">
+                    <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
+                        {$Brick->create()}
+                    </section>
+                </div>
+            </div>
+        {/if}
     {/foreach}
 
 
