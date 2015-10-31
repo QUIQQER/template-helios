@@ -117,5 +117,5 @@ $Engine->assign('bodyClass', $bodyClass);
 
 $Engine->assign(
     'typeClass',
-    'type-'. str_replace(array('/',':'), '', $Site->getAttribute('type'))
+    'type-'. str_replace(array('/',':'), '-', $Site->getAttribute('type'))
 );
