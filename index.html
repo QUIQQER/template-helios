@@ -145,7 +145,7 @@
     </style>
 
 </head>
-<body class="{$bodyClass} page-{$Site->getId()}">
+<body class="{$bodyClass} page-{$Site->getId()} {$typeClass}">
 
 {if $Project->getConfig('templateHelios.settings.pageMaxWidth')}
     <div class="page" style="margin: 0 auto; max-width: {$Project->getConfig('templateHelios.settings.pageMaxWidth')}px">
