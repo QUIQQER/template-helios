@@ -21,7 +21,7 @@
                 {/if}
                 </a>
             </h1>
-            {if $pageHeaderImage != 'image'}
+            {if $pageHeaderImage != 'image' && $Site->getAttribute('quiqqer.helios.settings.slogan')}
             <hr/>
             {/if}
             {if $Site->getAttribute('quiqqer.helios.settings.slogan')}
