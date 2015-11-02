@@ -14,7 +14,7 @@
 
                 <input conf="quiqqer.helios.settings.slogan">
                     <text>
-                        <locale group="quiqqer/tags" var="quiqqer.template-helios.slogan"/>
+                        <locale group="quiqqer/template-helios" var="quiqqer.template-helios.slogan"/>
                     </text>
                 </input>
             </settings>
