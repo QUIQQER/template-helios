@@ -1,40 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
 
+    <attributes>
+        <attribute>quiqqer.helios.settings.slogan</attribute>
+    </attributes>
+
+    <settings>
+        <category name="template-helios-settings">
+            <settings>
+                <title>
+                    <locale group="quiqqer/template-helios" var="quiqqer.template-helios.settings.title"/>
+                </title>
+
+                <input conf="quiqqer.helios.settings.slogan">
+                    <text>
+                        <locale group="quiqqer/tags" var="quiqqer.template-helios.slogan"/>
+                    </text>
+                </input>
+            </settings>
+        </category>
+    </settings>
+
     <layouts>
         <layout type="layout/startpage">
             <title>
-                <locale group="quiqqer/template-helios" var="admin.types.startpage" />
+                <locale group="quiqqer/template-helios" var="admin.types.startpage"/>
             </title>
             <description>
-                <locale group="quiqqer/template-helios" var="admin.types.startpage.desc" />
+                <locale group="quiqqer/template-helios" var="admin.types.startpage.desc"/>
             </description>
         </layout>
 
         <layout type="layout/leftSidebar">
             <title>
-                <locale group="quiqqer/template-helios" var="admin.types.leftSidebar" />
+                <locale group="quiqqer/template-helios" var="admin.types.leftSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-helios" var="admin.types.leftSidebar.desc" />
+                <locale group="quiqqer/template-helios" var="admin.types.leftSidebar.desc"/>
             </description>
         </layout>
 
         <layout type="layout/rightSidebar">
             <title>
-                <locale group="quiqqer/template-helios" var="admin.types.rightSidebar" />
+                <locale group="quiqqer/template-helios" var="admin.types.rightSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-helios" var="admin.types.rightSidebar.desc" />
+                <locale group="quiqqer/template-helios" var="admin.types.rightSidebar.desc"/>
             </description>
         </layout>
 
         <layout type="layout/noSidebar">
             <title>
-                <locale group="quiqqer/template-helios" var="admin.types.noSidebar" />
+                <locale group="quiqqer/template-helios" var="admin.types.noSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-helios" var="admin.types.noSidebar.desc" />
+                <locale group="quiqqer/template-helios" var="admin.types.noSidebar.desc"/>
             </description>
         </layout>
     </layouts>

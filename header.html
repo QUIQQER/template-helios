@@ -24,9 +24,11 @@
             {if $pageHeaderImage != 'image'}
             <hr/>
             {/if}
+            {if $Site->getAttribute('quiqqer.helios.settings.slogan')}
             <p>
-                {$Start->getAttribute('short')}
+                {$Start->getAttribute('quiqqer.helios.settings.slogan')}
             </p>
+            {/if}
         </header>
         {if $bodyClass == 'homepage'}
         <footer>
