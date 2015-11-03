@@ -170,6 +170,15 @@ img {
     padding-left: 2em !important;
 }
 
+@media screen and (max-width: 736px) {
+    .quiqqer-bricks-sidebox3 article:first-child,
+    .quiqqer-bricks-sidebox3 article:last-child,
+    .quiqqer-bricks-sidebox3 article {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 
 @media screen and (min-width: 840px) {
     .quiqqer-bricks-sidebox2 p {
