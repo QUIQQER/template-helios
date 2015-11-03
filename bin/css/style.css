@@ -60,21 +60,26 @@
 			font-weight: 600;
 		}
 
-	h2
-	{
+	h1 {
 		font-size: 2.85em;
 	}
-	
-	h3
+
+	h2
 	{
 		font-size: 1.25em;
 	}
 	
-	h4
+	h3
 	{
 		font-size: 1em;
 		margin: 0 0 0.25em 0;
 	}
+	
+	/*h4*/
+	/*{*/
+		/*font-size: 1em;*/
+		/*margin: 0 0 0.25em 0;*/
+	/*}*/
 	
 	strong, b
 	{
@@ -706,9 +711,9 @@
 		cursor: default;
 	}
 
-        #header h1 {
-            text-shadow: -1px 0 2px rgba(0, 0, 0, 0.80);
-        }
+        /*#header h1 {*/
+            /*text-shadow: -1px 0 2px rgba(0, 0, 0, 0.80);*/
+        /*}*/
         #header p {
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
         }
@@ -749,22 +754,22 @@
 			padding: 4em 0 0 0;
 		}
 	
-		#header h1
-		{
-			color: #fff;
-			font-size: 3em;
-			line-height: 1em;
-		}
+		/*#header h1*/
+		/*{*/
+			/*color: #fff;*/
+			/*font-size: 3em;*/
+			/*line-height: 1em;*/
+		/*}*/
 
-			.homepage #header h1
-			{
-				font-size: 4em;
-			}
+			/*.homepage #header h1*/
+			/*{*/
+				/*font-size: 4em;*/
+			/*}*/
 		
-			#header h1 a
-			{
-				color: inherit;
-			}
+			/*#header h1 a*/
+			/*{*/
+				/*color: inherit;*/
+			/*}*/
 
             #logo {
                 max-width: 70%;
@@ -826,9 +831,9 @@
             width: 100%;
         }
 
-        .header-type-image .inner header h1 {
-            float: left;
-        }
+        /*.header-type-image .inner header h1 {*/
+            /*float: left;*/
+        /*}*/
 
         .header-type-image .inner header p {
             float: right;
