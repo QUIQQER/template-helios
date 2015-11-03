@@ -203,6 +203,15 @@
             <en><![CDATA[Font color of the header]]></en>
         </locale>
 
+        <locale name="quiqqer.template-helios.settings.title">
+            <de><![CDATA[Template Helios: Einstellungen]]></de>
+            <en><![CDATA[Template Helios: Settings]]></en>
+        </locale>
+        <locale name="quiqqer.template-helios.slogan">
+            <de><![CDATA[Slogan]]></de>
+            <en><![CDATA[Slogan]]></en>
+        </locale>
+
     </groups>
 
 </locales>
