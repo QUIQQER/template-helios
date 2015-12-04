@@ -436,7 +436,20 @@
 				color: #483949;
 				margin: 0 0 1em 0;
 			}
-		
+
+
+			form input[type="search"],
+			form input[type="url"],
+			form input[type="number"],
+			form input[type="range"],
+			form input[type="date"],
+			form input[type="month"],
+			form input[type="week"],
+			form input[type="time"],
+			form input[type="datetime"],
+			form input[type="datetime-local"],
+			form input[type="color"],
+			form input[type="tel"],
 			form input[type="text"],
 			form input[type="email"],
 			form input[type="password"],
@@ -458,6 +471,18 @@
 				transition: background-color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 			}
 
+			form input[type="search"],
+			form input[type="url"],
+			form input[type="number"],
+			form input[type="range"],
+			form input[type="date"],
+			form input[type="month"],
+			form input[type="week"],
+			form input[type="time"],
+			form input[type="datetime"],
+			form input[type="datetime-local"],
+			form input[type="color"],
+			form input[type="tel"],
 			form input[type="text"],
 			form input[type="email"],
 			form input[type="password"],
@@ -471,6 +496,18 @@
 				min-height: 9em;
 			}
 
+				form input[type="search"]:focus,
+				form input[type="url"]:focus,
+				form input[type="number"]:focus,
+				form input[type="range"]:focus,
+				form input[type="date"]:focus,
+				form input[type="month"]:focus,
+				form input[type="week"]:focus,
+				form input[type="time"]:focus,
+				form input[type="datetime"]:focus,
+				form input[type="datetime-local"]:focus,
+				form input[type="color"]:focus,
+				form input[type="tel"]:focus,
 				form input[type="text"]:focus,
 				form input[type="email"]:focus,
 				form input[type="password"]:focus,
