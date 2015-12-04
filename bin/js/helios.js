@@ -1,6 +1,5 @@
 
-document.addEvent('domready', function()
-{
+document.addEvent('domready', function () {
     "use strict";
 
     new Element('div', {
@@ -15,9 +14,9 @@ document.addEvent('domready', function()
             width : '100%',
             zIndex: 100
         }
-    }).inject( document.body );
+    }).inject(document.body);
 
-    window.addEvent('load', function() {
+    window.addEvent('load', function () {
         window._loaded = true;
     });
 });
@@ -25,14 +24,14 @@ document.addEvent('domready', function()
 require.config({
 
     paths: {
-        'helios-init' : URL_TEMPLATE_DIR +'bin/js/init',
-        'skel'        : URL_TEMPLATE_DIR +'bin/js/skel.min',
-        'skel-layers' : URL_TEMPLATE_DIR +'bin/js/skel-layers.min',
+        'helios-init' : URL_TEMPLATE_DIR + 'bin/js/init',
+        'skel'        : URL_TEMPLATE_DIR + 'bin/js/skel.min',
+        'skel-layers' : URL_TEMPLATE_DIR + 'bin/js/skel-layers.min',
 
-        'jquery'           : URL_TEMPLATE_DIR +'bin/js/jquery.min',
-        'jquery.dropotron' : URL_TEMPLATE_DIR +'bin/js/jquery.dropotron.min',
-        'jquery.scrolly'   : URL_TEMPLATE_DIR +'bin/js/jquery.scrolly.min',
-        'jquery.onvisible' : URL_TEMPLATE_DIR +'bin/js/jquery.onvisible.min'
+        'jquery'           : URL_TEMPLATE_DIR + 'bin/js/jquery.min',
+        'jquery.dropotron' : URL_TEMPLATE_DIR + 'bin/js/jquery.dropotron.min',
+        'jquery.scrolly'   : URL_TEMPLATE_DIR + 'bin/js/jquery.scrolly.min',
+        'jquery.onvisible' : URL_TEMPLATE_DIR + 'bin/js/jquery.onvisible.min'
     },
 
     shim: {
@@ -55,21 +54,19 @@ require.config({
 });
 
 
-require(['qui/QUI', 'helios-init' ], function(QUI)
-{
+require(['qui/QUI', 'helios-init'], function (QUI) {
     "use strict";
 
-    var Header = document.getElement( '#header'),
+    var Header = document.getElement('#header'),
         Next   = Header.getNext();
 
-    if ( !Next.get( 'id' ) ) {
-        Next.set( 'id', String.uniqueID () );
+    if (!Next.get('id')) {
+        Next.set('id', String.uniqueID ());
     }
 
-    Header.getElements( '.scrolly' ).addEvent('click', function(event)
-    {
+    Header.getElements('.scrolly').addEvent('click', function (event) {
         event.stop();
-        new Fx.Scroll( window ).toElement( Next );
+        new Fx.Scroll(window).toElement(Next);
     });
 
     //

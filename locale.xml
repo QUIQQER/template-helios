@@ -73,6 +73,20 @@
             <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
             <en><![CDATA[Brickarea after the content]]></en>
         </locale>
+
+        <!-- start page carousel -->
+        <locale name="StartpageCarousel.limit">
+            <de><![CDATA[Angezeigte Seite]]></de>
+            <en><![CDATA[Limit the number of pages displayed]]></en>
+        </locale>
+        <locale name="StartpageCarousel.sitetypes">
+            <de><![CDATA[Seiten hinzufügen]]></de>
+            <en><![CDATA[Add pages]]></en>
+        </locale>
+        <locale name="brick.control.setting.order">
+            <de><![CDATA[Sortierung]]></de>
+            <en><![CDATA[Sort]]></en>
+        </locale>
     </groups>
 
 

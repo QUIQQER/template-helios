@@ -25,6 +25,41 @@
                             var="StartpageCarousel.sitetypes"
                     />
                 </setting>
+
+                <setting name="order" type="select">
+                    <locale group="quiqqer/template-helios" var="brick.control.setting.order"/>
+
+                    <option value="name ASC">
+                        <locale group="quiqqer/system" var="name_asc"/>
+                    </option>
+                    <option value="name DESC">
+                        <locale group="quiqqer/system" var="name_desc"/>
+                    </option>
+                    <option value="title ASC">
+                        <locale group="quiqqer/system" var="title_asc"/>
+                    </option>
+                    <option value="title DESC">
+                        <locale group="quiqqer/system" var="title_desc"/>
+                    </option>
+                    <option value="c_date ASC">
+                        <locale group="quiqqer/system" var="c_date_asc"/>
+                    </option>
+                    <option value="c_date DESC">
+                        <locale group="quiqqer/system" var="c_date_desc"/>
+                    </option>
+                    <option value="e_date ASC">
+                        <locale group="quiqqer/system" var="e_date_asc"/>
+                    </option>
+                    <option value="e_date DESC">
+                        <locale group="quiqqer/system" var="e_date_desc"/>
+                    </option>
+                    <option value="release_from ASC">
+                        <locale group="quiqqer/system" var="release_from_asc"/>
+                    </option>
+                    <option value="release_from DESC">
+                        <locale group="quiqqer/system" var="release_from_desc"/>
+                    </option>
+                </setting>
             </settings>
         </brick>
 

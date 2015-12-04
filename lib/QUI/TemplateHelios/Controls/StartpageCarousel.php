@@ -54,8 +54,24 @@ class StartpageCarousel extends QUI\Control
             $limit = 2;
         }
 
-        if (!$order) {
-            $order = 'release_from ASC';
+        // order
+        switch ($this->getAttribute('order')) {
+            case 'name ASC':
+            case 'name DESC':
+            case 'title ASC':
+            case 'title DESC':
+            case 'c_date ASC':
+            case 'c_date DESC':
+            case 'd_date ASC':
+            case 'd_date DESC':
+            case 'release_from ASC':
+            case 'release_from DESC':
+                $order = $this->getAttribute('order');
+                break;
+
+            default:
+                $order = 'release_from DESC';
+                break;
         }
 
 
