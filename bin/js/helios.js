@@ -104,7 +104,7 @@ require(['qui/QUI', 'helios-init'], function () {
             history.pushState(
                 {},
                 document.title,
-                window.location.pathname +'#'+ href
+                window.location.pathname + '#' + href
             );
             return false;
         }
