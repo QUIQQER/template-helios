@@ -110,12 +110,15 @@ require(['qui/QUI', 'helios-init'], function () {
         }
     };
 
+
     if (window.location.hash) {
         scrollOffsetHelper(window.location.hash);
     }
 
-    document.getElements('a[href^=\'#\']').each(function (Link) {
-        Link.addEvent('click', scrollOffsetHelper);
+    window.addEvent('load', function () {
+        document.getElements('a[href^=\'#\']').each(function (Link) {
+            Link.addEvent('click', scrollOffsetHelper);
+        });
     });
 
     if ("onhashchange" in window) {
