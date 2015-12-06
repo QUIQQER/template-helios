@@ -68,8 +68,8 @@ require(['qui/QUI', 'helios-init'], function () {
         new Fx.Scroll(window).toElement(Next);
     });
 
-    // scroll fix
 
+    // scroll fix
     var Nav = document.id('nav');
 
     var scrollOffset       = Nav.getSize().y;
@@ -110,13 +110,19 @@ require(['qui/QUI', 'helios-init'], function () {
         }
     };
 
+    if (window.location.hash) {
+        scrollOffsetHelper(window.location.hash);
+    }
 
     document.getElements('a[href^=\'#\']').each(function (Link) {
         Link.addEvent('click', scrollOffsetHelper);
     });
 
-    if (window.location.hash) {
-        scrollOffsetHelper(window.location.hash);
+    if ("onhashchange" in window) {
+        window.addEventListener("hashchange", function () {
+            (function () {
+                scrollOffsetHelper(window.location.hash);
+            }).delay(100);
+        });
     }
-
 });
