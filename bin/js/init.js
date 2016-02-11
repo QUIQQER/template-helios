@@ -119,6 +119,7 @@
 
     $window.on('load', function () {
         $body.removeClass('is-loading');
+        $header.addClass('ready');
     });
 
     $window.load(function () {
