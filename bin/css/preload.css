@@ -7,6 +7,11 @@ img {
     max-width: 100%;
 }
 
+body {
+    opacity: 0;
+}
+
+
 /*
 #nav a span,
 #header h1 a {

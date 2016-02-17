@@ -1,8 +1,8 @@
 /*
-	Helios by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+ Helios by HTML5 UP
+ html5up.net | @n33co
+ Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ */
 
 /* global skel */
 /* global jQuery */
@@ -14,61 +14,61 @@
         // Header (homepage only)
         header: {
             fullScreen: true,
-            fadeIn: true,
-            fadeDelay: 500
+            fadeIn    : true,
+            fadeDelay : 500
         },
 
         // Carousels
         carousels: {
-            speed: 4,
-            fadeIn: true,
+            speed    : 4,
+            fadeIn   : true,
             fadeDelay: 250
         }
     };
 
     skel.init({
-        reset: 'full',
+        reset      : 'full',
         breakpoints: {
-            global:	{
-                range: '*',
-                href: URL_TEMPLATE_DIR + 'bin/css/style.css',
+            global  : {
+                range     : '*',
+                href      : URL_TEMPLATE_DIR + 'bin/css/style.css',
                 containers: 1400,
-                grid: {
+                grid      : {
                     gutters: 48
                 }
             },
-            wide:		{
-                range: '-1680',
-                href: URL_TEMPLATE_DIR + 'bin/css/style-wide.css',
+            wide    : {
+                range     : '-1680',
+                href      : URL_TEMPLATE_DIR + 'bin/css/style-wide.css',
                 containers: 1200
             },
-            normal:	{
-                range: '-1280',
-                href: URL_TEMPLATE_DIR + 'bin/css/style-normal.css',
+            normal  : {
+                range     : '-1280',
+                href      : URL_TEMPLATE_DIR + 'bin/css/style-normal.css',
                 containers: '100%',
-                grid: {
+                grid      : {
                     gutters: 36
                 }
             },
-            narrow:	{
+            narrow  : {
                 range: '-960',
-                href: URL_TEMPLATE_DIR + 'bin/css/style-narrow.css',
-                grid: {
+                href : URL_TEMPLATE_DIR + 'bin/css/style-narrow.css',
+                grid : {
                     gutters: 32
                 }
             },
             narrower: {
-                range: '-840',
-                href: URL_TEMPLATE_DIR + 'bin/css/style-narrower.css',
+                range     : '-840',
+                href      : URL_TEMPLATE_DIR + 'bin/css/style-narrower.css',
                 containers: '100%!',
-                grid: {
+                grid      : {
                     collapse: true
                 }
             },
-            mobile:	{
-                range: '-736',
-                href: URL_TEMPLATE_DIR + 'bin/css/style-mobile.css',
-                grid: {
+            mobile  : {
+                range   : '-736',
+                href    : URL_TEMPLATE_DIR + 'bin/css/style-mobile.css',
+                grid    : {
                     gutters: 20
                 },
                 viewport: {
@@ -76,446 +76,463 @@
                 }
             }
         },
-        plugins: {
+        plugins    : {
             layers: {
-                config: {
+                config   : {
                     mode: function () {
                         return (
-                                                                   skel.vars.isMobile ? 'transform' : 'position');
+                            skel.vars.isMobile ? 'transform' : 'position');
                     }
                 },
-                navPanel: {
-                    hidden: true,
+                navPanel : {
+                    hidden     : true,
                     breakpoints: 'mobile',
-                    position: 'top-left',
-                    side: 'top',
-                    width: '100%',
-                    height: 250,
-                    animation: 'pushY',
+                    position   : 'top-left',
+                    side       : 'top',
+                    width      : '100%',
+                    height     : 250,
+                    animation  : 'pushY',
                     clickToHide: true,
                     swipeToHide: false,
-                    html: '<div data-action="navList" data-args="nav"></div>',
+                    html       : '<div data-action="navList" data-args="nav"></div>',
                     orientation: 'vertical'
                 },
                 navButton: {
                     breakpoints: 'mobile',
-                    position: 'top-center',
-                    side: 'top',
-                    width: 100,
-                    height: 50,
-                    html: '<div class="toggle" data-action="toggleLayer" data-args="navPanel"></div>'
+                    position   : 'top-center',
+                    side       : 'top',
+                    width      : 100,
+                    height     : 50,
+                    html       : '<div class="toggle" data-action="toggleLayer" data-args="navPanel"></div>'
                 }
             }
         }
     });
 
     $(function () {
-    var	$window = $(window),
-    $body   = $('body'),
-    $header = $('#header');
+        var $window = $(window),
+            $body   = $('body'),
+            $header = $('#header');
 
-    // Disable animations/transitions until the page has loaded.
-    $body.addClass('is-loading');
+        // Disable animations/transitions until the page has loaded.
+        $body.addClass('is-loading');
 
-    $window.on('load', function () {
-        $body.removeClass('is-loading');
-        $header.addClass('ready');
-    });
+        $window.on('load', function () {
+            $body.css('opacity', 1);
+            $body.removeClass('is-loading');
 
-    $window.load(function () {
-        var Loader = document.getElement('#___body_loader');
+            $header.addClass('ready');
+        });
 
-        if (!Loader) {
-            return;
+        $window.load(function () {
+            var Loader = document.getElement('#___body_loader');
+
+            if (!Loader) {
+                return;
+            }
+
+            $window.resize();
+
+            moofx(Loader).animate({
+                opacity: 0
+            }, {
+                callback: function () {
+                    Loader.destroy();
+                }
+            });
+        });
+
+        // CSS polyfills (IE<9).
+        if (skel.vars.IEVersion < 9) {
+            $(':last-child').addClass('last-child');
         }
 
-        $window.resize();
+        // Forms (IE<10).
+        var $form = $('form');
+        if ($form.length > 0) {
 
-        moofx(Loader).animate({
-                    opacity: 0
-                }, {
-                    callback : function () {
-                        Loader.destroy();
-                    }
+            $form.find('.form-button-submit')
+                .on('click', function () {
+                    $(this).parents('form').submit();
+                    return false;
                 });
-    });
 
-    // CSS polyfills (IE<9).
-    if (skel.vars.IEVersion < 9)
-    $(':last-child').addClass('last-child');
+            if (skel.vars.IEVersion < 10) {
+                $.fn.n33_formerize = function () {
+                    var _fakes = [],
+                        _form  = $(this);
 
-    // Forms (IE<10).
-    var $form = $('form');
-    if ($form.length > 0) {
+                    _form.find('input[type=text],textarea').each(function () {
+                        var e = $(this);
 
-        $form.find('.form-button-submit')
-					.on('click', function () {
-    $(this).parents('form').submit();
-    return false;
-					});
+                        if (e.val() === '' || e.val() == e.attr('placeholder')) {
+                            e.addClass('formerize-placeholder');
+                            e.val(e.attr('placeholder'));
+                        }
+                    }).blur(function () {
+                        var e = $(this);
 
-        if (skel.vars.IEVersion < 10) {
-            $.fn.n33_formerize = function () {
-                        var _fakes = [],
-                            _form = $(this);
+                        if (e.attr('name').match(/_fakeformerizefield$/)) {
+                            return;
+                        }
 
-                        _form.find('input[type=text],textarea').each(function () {
-                            var e = $(this);
+                        if (e.val() === '') {
+                            e.addClass('formerize-placeholder');
+                            e.val(e.attr('placeholder'));
+                        }
+                    }).focus(function () {
+                        var e = $(this);
 
-                            if (e.val() === '' || e.val() == e.attr('placeholder')) {
-                                e.addClass('formerize-placeholder');
-                                e.val(e.attr('placeholder'));
-                            }
-                        }).blur(function () {
-                            var e = $(this);
+                        if (e.attr('name').match(/_fakeformerizefield$/)) {
+                            return;
+                        }
 
-                            if (e.attr('name').match(/_fakeformerizefield$/))
-                                return;
+                        if (e.val() == e.attr('placeholder')) {
+                            e.removeClass('formerize-placeholder');
+                            e.val('');
+                        }
+                    });
 
-                            if (e.val() === '') {
-                                e.addClass('formerize-placeholder');
-                                e.val(e.attr('placeholder'));
-                            }
-                        }).focus(function () {
-                            var e = $(this);
+                    _form.find('input[type=password]').each(function () {
+                        var e = $(this);
+                        var x = $($('<div>').append(e.clone())
+                            .remove()
+                            .html()
+                            .replace(/type="password"/i, 'type="text"')
+                            .replace(/type=password/i, 'type=text'));
 
-                            if (e.attr('name').match(/_fakeformerizefield$/))
-                                return;
+                        if (e.attr('id') !== '') {
+                            x.attr('id', e.attr('id') + '_fakeformerizefield');
+                        }
 
-                            if (e.val() == e.attr('placeholder')) {
-                                e.removeClass('formerize-placeholder');
-                                e.val('');
-                            }
-                        });
+                        if (e.attr('name') !== '') {
+                            x.attr('name', e.attr('name') + '_fakeformerizefield');
+                        }
 
-                        _form.find('input[type=password]').each(function () {
-                            var e = $(this);
-                            var x = $($('<div>').append(e.clone())
-                                                .remove()
-                                                .html()
-                                                .replace(/type="password"/i, 'type="text"')
-                                                .replace(/type=password/i, 'type=text'));
+                        x.addClass('formerize-placeholder').val(x.attr('placeholder')).insertAfter(e);
 
-                            if (e.attr('id') !== '')
-                                x.attr('id', e.attr('id') + '_fakeformerizefield');
+                        if (e.val() === '') {
+                            e.hide();
+                        } else {
+                            x.hide();
+                        }
 
-                            if (e.attr('name') !== '')
-                                x.attr('name', e.attr('name') + '_fakeformerizefield');
-
-                            x.addClass('formerize-placeholder').val(x.attr('placeholder')).insertAfter(e);
-
-                            if (e.val() === '')
-                                e.hide();
-                            else
-                                x.hide();
-
-                            e.blur(function (event) {
-                                event.preventDefault();
-
-                                var e = $(this);
-                                var x = e.parent().find('input[name=' + e.attr('name') + '_fakeformerizefield]');
-
-                                if (e.val() === '') {
-                                    e.hide();
-                                    x.show();
-                                }
-                            });
-
-                            x.focus(function (event) {
-                                event.preventDefault();
-
-                                var x = $(this);
-                                var e = x.parent().find('input[name=' + x.attr('name').replace('_fakeformerizefield', '') + ']');
-
-                                x.hide();
-                                e.show().focus();
-                            });
-
-                            x.keypress(function (event) {
-                                event.preventDefault();
-                                x.val('');
-                            });
-                        });
-
-                        _form.submit(function () {
-                            $(this).find('input[type=text],input[type=password],textarea')
-                                   .each(function () {
-                                       var e = $(this);
-
-                                       if (e.attr('name').match(/_fakeformerizefield$/)) e.attr('name', '');
-
-                                       if (e.val() == e.attr('placeholder')) {
-                                           e.removeClass('formerize-placeholder');
-                                           e.val('');
-                                       }
-                                   });
-
-                        }).bind("reset", function (event) {
+                        e.blur(function (event) {
                             event.preventDefault();
 
-                            $(this).find('select').val($('option:first').val());
-                            $(this).find('input,textarea').each(function () {
+                            var e = $(this);
+                            var x = e.parent().find('input[name=' + e.attr('name') + '_fakeformerizefield]');
+
+                            if (e.val() === '') {
+                                e.hide();
+                                x.show();
+                            }
+                        });
+
+                        x.focus(function (event) {
+                            event.preventDefault();
+
+                            var x = $(this);
+                            var e = x.parent().find('input[name=' + x.attr('name').replace('_fakeformerizefield', '') + ']');
+
+                            x.hide();
+                            e.show().focus();
+                        });
+
+                        x.keypress(function (event) {
+                            event.preventDefault();
+                            x.val('');
+                        });
+                    });
+
+                    _form.submit(function () {
+                        $(this).find('input[type=text],input[type=password],textarea')
+                            .each(function () {
                                 var e = $(this);
-                                var x; e.removeClass('formerize-placeholder');
 
-                                switch (this.type) {
-                                    case 'submit':
-                                    case 'reset':
-                                        break;
+                                if (e.attr('name').match(/_fakeformerizefield$/)) {
+                                    e.attr('name', '');
+                                }
 
-                                    case 'password':
-                                        e.val(e.attr('defaultValue'));
-                                        x = e.parent().find('input[name=' + e.attr('name') + '_fakeformerizefield]');
-
-                                        if (e.val() === '') {
-                                            e.hide();
-                                            x.show();
-                                        } else {
-                                            e.show();
-                                            x.hide();
-                                        }
-                                        break;
-
-                                    case 'checkbox':
-                                    case 'radio':
-                                        e.attr('checked', e.attr('defaultValue'));
-                                        break;
-
-                                    case 'text':
-                                    case 'textarea':
-                                        e.val(e.attr('defaultValue'));
-
-                                        if (e.val() === '') {
-                                            e.addClass('formerize-placeholder');
-                                            e.val(e.attr('placeholder'));
-                                        }
-                                        break;
-
-                                    default:
-                                        e.val(e.attr('defaultValue'));
-                                        break;
+                                if (e.val() == e.attr('placeholder')) {
+                                    e.removeClass('formerize-placeholder');
+                                    e.val('');
                                 }
                             });
 
-                            window.setTimeout(function () {
-                                for (var x in _fakes)
-                                    _fakes[x].trigger('formerize_sync');
-                            }, 10);
+                    }).bind("reset", function (event) {
+                        event.preventDefault();
+
+                        $(this).find('select').val($('option:first').val());
+                        $(this).find('input,textarea').each(function () {
+                            var e = $(this);
+                            var x;
+                            e.removeClass('formerize-placeholder');
+
+                            switch (this.type) {
+                                case 'submit':
+                                case 'reset':
+                                    break;
+
+                                case 'password':
+                                    e.val(e.attr('defaultValue'));
+                                    x = e.parent().find('input[name=' + e.attr('name') + '_fakeformerizefield]');
+
+                                    if (e.val() === '') {
+                                        e.hide();
+                                        x.show();
+                                    } else {
+                                        e.show();
+                                        x.hide();
+                                    }
+                                    break;
+
+                                case 'checkbox':
+                                case 'radio':
+                                    e.attr('checked', e.attr('defaultValue'));
+                                    break;
+
+                                case 'text':
+                                case 'textarea':
+                                    e.val(e.attr('defaultValue'));
+
+                                    if (e.val() === '') {
+                                        e.addClass('formerize-placeholder');
+                                        e.val(e.attr('placeholder'));
+                                    }
+                                    break;
+
+                                default:
+                                    e.val(e.attr('defaultValue'));
+                                    break;
+                            }
                         });
 
-                        return _form;
-                    };
+                        window.setTimeout(function () {
+                            for (var x in _fakes) {
+                                _fakes[x].trigger('formerize_sync');
+                            }
+                        }, 10);
+                    });
 
-            $form.n33_formerize();
+                    return _form;
+                };
+
+                $form.n33_formerize();
+            }
         }
-    }
 
-    // Dropdowns.
-    $('#nav > ul').dropotron({
-        mode: 'fade',
-        speed: 350,
-        noOpenerFade: true,
-        alignment: 'center'
-    });
+        // Dropdowns.
+        $('#nav > ul').dropotron({
+            mode        : 'fade',
+            speed       : 350,
+            noOpenerFade: true,
+            alignment   : 'center'
+        });
 
-    // Scrolly links.
-    $('.scrolly').scrolly();
+        // Scrolly links.
+        $('.scrolly').scrolly();
 
-    // Carousels.
-    $('.carousel').each(function () {
-        var	$t        = $(this),
-        $forward  = $('<span class="forward"></span>'),
-        $backward = $('<span class="backward"></span>'),
-        $reel     = $t.children('.reel'),
-        $items    = $reel.children('article');
+        // Carousels.
+        $('.carousel').each(function () {
+            var $t        = $(this),
+                $forward  = $('<span class="forward"></span>'),
+                $backward = $('<span class="backward"></span>'),
+                $reel     = $t.children('.reel'),
+                $items    = $reel.children('article');
 
-        var	pos = 0,
-        leftLimit,
-        rightLimit,
-        itemWidth,
-        reelWidth,
-        timerId;
+            var pos = 0,
+                leftLimit,
+                rightLimit,
+                itemWidth,
+                reelWidth,
+                timerId;
 
-        // Items.
-        if (settings.carousels.fadeIn) {
-            $items.addClass('loading');
+            // Items.
+            if (settings.carousels.fadeIn) {
+                $items.addClass('loading');
 
-            $t.onVisible(function () {
+                $t.onVisible(function () {
+                    var parentWidth = $window.width();
+
+                    if ($t.parent('.row').length) {
+                        parentWidth = $t.parent('.row').width();
+                    }
+
+                    var timerId,
+                        //								limit = $items.length - Math.ceil($window.width() / itemWidth);
+                        limit = $items.length - Math.ceil(parentWidth / itemWidth);
+
+                    timerId = window.setInterval(function () {
+                        var x = $items.filter('.loading'), xf = x.first();
+
+                        if (x.length <= limit) {
+                            window.clearInterval(timerId);
+                            $items.removeClass('loading');
+                            return;
+                        }
+
+                        if (skel.vars.IEVersion < 10) {
+                            xf.fadeTo(750, 1.0);
+
+                            window.setTimeout(function () {
+                                xf.removeClass('loading');
+                            }, 50);
+                        } else {
+                            xf.removeClass('loading');
+                        }
+
+                    }, settings.carousels.fadeDelay);
+                }, 50);
+            }
+
+            // Main.
+            $t._update = function () {
                 var parentWidth = $window.width();
 
                 if ($t.parent('.row').length) {
                     parentWidth = $t.parent('.row').width();
                 }
 
-                var	timerId,
-                //								limit = $items.length - Math.ceil($window.width() / itemWidth);
-                limit = $items.length - Math.ceil(parentWidth / itemWidth);
+                pos        = 0;
+                rightLimit = (-1 * reelWidth) + parentWidth;
+                leftLimit  = 0;
+                $t._updatePos();
+            };
 
-                timerId = window.setInterval(function () {
-                    var x = $items.filter('.loading'), xf = x.first();
-
-                    if (x.length <= limit) {
-                        window.clearInterval(timerId);
-                        $items.removeClass('loading');
-                        return;
-                    }
-
-                    if (skel.vars.IEVersion < 10) {
-                        xf.fadeTo(750, 1.0);
-
-                        window.setTimeout(function () {
-                            xf.removeClass('loading');
-                        }, 50);
-                    } else
-                    xf.removeClass('loading');
-
-                }, settings.carousels.fadeDelay);
-            }, 50);
-        }
-
-        // Main.
-        $t._update = function () {
-            var parentWidth = $window.width();
-
-            if ($t.parent('.row').length) {
-                parentWidth = $t.parent('.row').width();
+            if (skel.vars.IEVersion < 9) {
+                $t._updatePos = function () {
+                    $reel.css('left', pos);
+                };
+            } else {
+                $t._updatePos = function () {
+                    $reel.css('transform', 'translate(' + pos + 'px, 0)');
+                };
             }
 
-            pos = 0;
-            rightLimit = (-1 * reelWidth) + parentWidth;
-            leftLimit = 0;
-            $t._updatePos();
-        };
+            // Forward.
+            $forward
+                .appendTo($t)
+                .hide()
+                .mouseenter(function () {
+                    timerId = window.setInterval(function () {
+                        pos -= settings.carousels.speed;
 
-        if (skel.vars.IEVersion < 9)
-        $t._updatePos = function () {
-            $reel.css('left', pos);
-        };
-        else
-        $t._updatePos = function () {
-            $reel.css('transform', 'translate(' + pos + 'px, 0)');
-        };
+                        if (pos <= rightLimit) {
+                            window.clearInterval(timerId);
+                            pos = rightLimit;
+                        }
 
-        // Forward.
-        $forward
-        .appendTo($t)
-        .hide()
-						.mouseenter(function () {
-    timerId = window.setInterval(function () {
-        pos -= settings.carousels.speed;
+                        $t._updatePos();
+                    }, 10);
+                })
+                .mouseleave(function () {
+                    window.clearInterval(timerId);
+                });
 
-        if (pos <= rightLimit) {
-            window.clearInterval(timerId);
-            pos = rightLimit;
-        }
+            // Backward.
+            $backward
+                .appendTo($t)
+                .hide()
+                .mouseenter(function () {
+                    timerId = window.setInterval(function () {
+                        pos += settings.carousels.speed;
 
-        $t._updatePos();
-    }, 10);
-						})
-						.mouseleave(function () {
-    window.clearInterval(timerId);
-						});
+                        if (pos >= leftLimit) {
+                            window.clearInterval(timerId);
+                            pos = leftLimit;
+                        }
 
-        // Backward.
-        $backward
-        .appendTo($t)
-        .hide()
-						.mouseenter(function () {
-    timerId = window.setInterval(function () {
-        pos += settings.carousels.speed;
+                        $t._updatePos();
+                    }, 10);
+                })
+                .mouseleave(function () {
+                    window.clearInterval(timerId);
+                });
 
-        if (pos >= leftLimit) {
-            window.clearInterval(timerId);
-            pos = leftLimit;
-        }
+            // Init.
+            $window.load(function () {
+                reelWidth = $reel[0].scrollWidth;
 
-        $t._updatePos();
-    }, 10);
-						})
-						.mouseleave(function () {
-    window.clearInterval(timerId);
-						});
+                skel.change(function () {
+                    if (skel.vars.isTouch) {
+                        $reel
+                            .css('overflow-y', 'hidden')
+                            .css('overflow-x', 'scroll')
+                            .scrollLeft(0);
+                        $forward.hide();
+                        $backward.hide();
 
-        // Init.
-        $window.load(function () {
-            reelWidth = $reel[0].scrollWidth;
+                    } else {
+                        $reel
+                            .css('overflow', 'visible')
+                            .scrollLeft(0);
+                        $forward.show();
+                        $backward.show();
+                    }
 
-            skel.change(function () {
-                if (skel.vars.isTouch) {
-                    $reel
-                    .css('overflow-y', 'hidden')
-                    .css('overflow-x', 'scroll')
-                    .scrollLeft(0);
-                    $forward.hide();
-                    $backward.hide();
+                    $t._update();
+                });
 
-                } else {
-                    $reel
-                    .css('overflow', 'visible')
-                    .scrollLeft(0);
-                    $forward.show();
-                    $backward.show();
-                }
-
-                $t._update();
+                $window.resize(function () {
+                    reelWidth = $reel[0].scrollWidth;
+                    $t._update();
+                }).trigger('resize');
             });
 
-            $window.resize(function () {
-                reelWidth = $reel[0].scrollWidth;
-                $t._update();
-            }).trigger('resize');
         });
 
-    });
+        // Header.
+        if ($body.hasClass('homepage')) {
+            if (settings.header.fullScreen) {
+                $window.bind('resize.helios', function () {
+                    window.setTimeout(function () {
+                        var s  = $header.children('.inner');
+                        var sh = s.outerHeight(), hh = $window.height(), h = Math.ceil((hh - sh) / 2) + 1;
 
-    // Header.
-    if ($body.hasClass('homepage')) {
-        if (settings.header.fullScreen) {
-            $window.bind('resize.helios', function () {
-                window.setTimeout(function () {
-                    var s = $header.children('.inner');
-                    var sh = s.outerHeight(), hh = $window.height(), h = Math.ceil((hh - sh) / 2) + 1;
+                        $header
+                            .css('padding-top', h)
+                            .css('padding-bottom', h);
+                    }, 0);
+                }).trigger('resize');
+            }
 
-                    $header
-                    .css('padding-top', h)
-                    .css('padding-bottom', h);
-                }, 0);
-            }).trigger('resize');
-        }
+            if (settings.header.fadeIn) {
+                $.n33_preloadImage = function (url, onload) {
+                    var $img       = $('<img />'),
+                        _IEVersion = (navigator.userAgent.match(/MSIE ([0-9]+)\./) ? parseInt(RegExp.$1) : 99);
+                    $img.attr('src', url);
 
-        if (settings.header.fadeIn) {
-            $.n33_preloadImage = function (url, onload) {
-                        var $img = $('<img />'),
-                        _IEVersion = (navigator.userAgent.match(/MSIE ([0-9]+)\./) ? parseInt(RegExp.$1) : 99); $img.attr('src', url);
+                    if ($img.get(0).complete || _IEVersion < 9) {
+                        (onload)();
+                    } else {
+                        $img.load(onload);
+                    }
+                };
 
-                        if ($img.get(0).complete || _IEVersion < 9)
-                            (onload)();
-                        else
-                            $img.load(onload);
-                    };
+                $('<div class="overlay" />').appendTo($header);
 
-            $('<div class="overlay" />').appendTo($header);
+                $window.load(function () {
+                    var imageURL = $header.css('background-image')
+                        .replace(/"/g, "")
+                        .replace(/url\(|\)$/ig, "");
 
-            $window.load(function () {
-                var imageURL = $header.css('background-image')
-                                      .replace(/"/g, "")
-                                      .replace(/url\(|\)$/ig, "");
-
-                $.n33_preloadImage(imageURL, function () {
-                    if (skel.vars.IEVersion < 10)
-                        $header.children('.overlay').fadeOut(2000);
-                    else
-                                window.setTimeout(function () {
-                                    $header.addClass('ready');
-                                }, settings.header.fadeDelay);
+                    $.n33_preloadImage(imageURL, function () {
+                        if (skel.vars.IEVersion < 10) {
+                            $header.children('.overlay').fadeOut(2000);
+                        } else {
+                            window.setTimeout(function () {
+                                $header.addClass('ready');
+                            }, settings.header.fadeDelay);
+                        }
+                    });
                 });
-            });
+            }
         }
-    }
 
-    if ("_loaded" in window) {
-        $window.load();
-    }
-	});
+        if ("_loaded" in window) {
+            $window.load();
+        }
+    });
 
 })(jQuery);
