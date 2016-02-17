@@ -131,6 +131,7 @@
                 return;
             }
 
+            $body.css('opacity', 1);
             $window.resize();
 
             moofx(Loader).animate({
@@ -522,6 +523,7 @@
                             $header.children('.overlay').fadeOut(2000);
                         } else {
                             window.setTimeout(function () {
+                                $body.css('opacity', 1);
                                 $header.addClass('ready');
                             }, settings.header.fadeDelay);
                         }
