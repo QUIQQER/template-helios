@@ -3,9 +3,11 @@
 <div class="reel">
     {foreach from=$children item=Child}
     <article>
-        <a href="{url site=$Child}" class="image featured">
-            {image src=$Child->getAttribute('image_site') width=400}
-        </a>
+        <div class="carousel-extra-div">
+            <a href="{url site=$Child}" class="image featured">
+                {image src=$Child->getAttribute('image_site') width=400 class="carousel-image"}
+            </a>
+            </div>
         <header>
             <h3>
                 <a href="{url site=$Child}">
