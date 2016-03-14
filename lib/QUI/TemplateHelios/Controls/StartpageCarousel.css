@@ -148,6 +148,18 @@ a.image.featured img {
     vertical-align: middle;
 }
 
+a.image.featured {
+    height: 240px;
+}
+
+a.image.featured:before {
+    display:inline-block;
+    content: "";
+    position:absolute;
+    top: 0; left: 0;
+    text-align: center;
+}
+
 .carousel article p {
     min-height: 150px;
 }
