@@ -32,7 +32,6 @@
     <noscript>
         <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/skel.css" />
         <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css" />
-        <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style-desktop.css" />
         <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style-noscript.css" />
     </noscript>
 
@@ -56,7 +55,7 @@
         form textarea:focus {
             border-color: {$controlColor};
         }
-
+        
         .content-button,
         input[type="button"],
         input[type="submit"],
@@ -145,7 +144,7 @@
     </style>
 
 </head>
-<body class="{$bodyClass} page-{$Site->getId()}">
+<body class="{$bodyClass} page-{$Site->getId()} {$typeClass}">
 
 {if $Project->getConfig('templateHelios.settings.pageMaxWidth')}
     <div class="page" style="margin: 0 auto; max-width: {$Project->getConfig('templateHelios.settings.pageMaxWidth')}px">
@@ -157,13 +156,21 @@
 
     {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
     {foreach $headerSuffix as $Brick}
-    <div class="container">
-        <div class="">
-            <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
-                {$Brick->create()}
-            </section>
-        </div>
-    </div>
+        {if $Brick->getType() == 'QUI\Controls\Breadcrumb'}
+            <div class="container wrapper-mini">
+                <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
+                    {$Brick->create()}
+                </section>
+            </div>
+        {else}
+            <div class="wrapper">
+                <div class="container">
+                    <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
+                        {$Brick->create()}
+                    </section>
+                </div>
+            </div>
+        {/if}
     {/foreach}
 
 

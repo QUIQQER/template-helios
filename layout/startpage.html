@@ -7,29 +7,17 @@
 
 {foreach from=$bricks item=Brick}
 
-    {if $Brick->getType() == 'QUI\TemplateHelios\Controls\StartpageCarousel' ||
-        $Brick->getType() == 'QUI\Bricks\Controls\Banner'
+    {if $Brick->isInstanceOf('QUI\TemplateHelios\Controls\StartpageCarousel') ||
+        $Brick->isInstanceOf('QUI\Bricks\Controls\Banner')
     }
         {$Brick->create()}
-
-    {else if $Brick->getType() == 'QUI\Bricks\Controls\SideBox2'}
-    <div class="wrapper style1">
-        {assign var=_tmp value=$Brick->setAttribute( 'class', 'quiqqer-bricks-sidebox2 container special' )}
-        {assign var=_tmp value=$Brick->setAttribute( 'grid-class-article', '6u special' )}
-        {$Brick->create()}
-    </div>
-
-    {else if $Brick->getType() == 'QUI\Bricks\Controls\SideBox3'}
-    <div class="wrapper style1">
-        {assign var=_tmp value=$Brick->setAttribute( 'class', 'quiqqer-bricks-sidebox3 container special' )}
-        {assign var=_tmp value=$Brick->setAttribute( 'grid-class-article', '4u special' )}
-        {$Brick->create()}
-    </div>
 
     {else}
     <section class="wrapper style1">
         <div class="container">
+            <div class="row">
             {$Brick->create()}
+            </div>
         </div>
     </section>
     {/if}
@@ -37,23 +25,49 @@
 {/foreach}
 {/strip}
 
+
+{if !empty( $prefixContentBricks )}
+    {foreach from=$prefixContentBricks item=Brick}
+        {if $Brick->isInstanceOf('QUI\TemplateHelios\Controls\StartpageCarousel') ||
+            $Brick->isInstanceOf('QUI\Bricks\Controls\Banner')
+        }
+            {$Brick->create()}
+        {else}
+            <section class="wrapper style1">
+                <div class="container">
+                    <div class="row">
+                        {$Brick->create()}
+                    </div>
+                </div>
+            </section>
+        {/if}
+    {/foreach}
+{/if}
+
+
 <div class="wrapper style1">
     <div class="container">
         <div class="row" id="content">
-
-            {if !empty( $prefixContentBricks )}
-            {foreach from=$prefixContentBricks item=Brick}
-                {$Brick->create()}
-            {/foreach}
-            {/if}
-
             {$Template->getBody()}
-
-            {if !empty( $suffixContentBricks )}
-            {foreach from=$suffixContentBricks item=Brick}
-                {$Brick->create()}
-            {/foreach}
-            {/if}
         </div>
     </div>
 </div>
+
+
+{if !empty( $suffixContentBricks )}
+    {foreach from=$suffixContentBricks item=Brick}
+        {if $Brick->isInstanceOf('QUI\TemplateHelios\Controls\StartpageCarousel') ||
+            $Brick->isInstanceOf('QUI\Bricks\Controls\Banner')
+        }
+            {$Brick->create()}
+        {else}
+            <section class="wrapper style1">
+                <div class="container">
+                    <div class="row">
+                        {$Brick->create()}
+                    </div>
+                </div>
+            </section>
+        {/if}
+    {/foreach}
+{/if}

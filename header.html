@@ -9,28 +9,31 @@
 >
 
     <!-- Inner -->
-    <div class="inner">
+    <div class="inner"
+         itemscope itemtype="http://schema.org/Organization"
+            >
         <header>
 
-            <h1>
-                <a href="{url id=1}" id="logo" title="{$headerText|escape:" html"}">
-                {if $headerLogo}
-                    {image src=$headerLogo}
-                {else}
-                    {$headerText}
-                {/if}
-                </a>
-            </h1>
-            {if $pageHeaderImage != 'image'}
+            <a href="{url id=1}" id="logo" title="{$headerText|escape:" html"}" itemprop="url">
+            {if $headerLogo}
+                {image src=$headerLogo width=400 itemprop="logo"}
+            {else}
+                {$headerText}
+            {/if}
+            </a>
+
+            {if $pageHeaderImage != 'image' && $Site->getAttribute('quiqqer.helios.settings.slogan')}
             <hr/>
             {/if}
-            <p>
-                {$Start->getAttribute('short')}
+            {if $Site->getAttribute('quiqqer.helios.settings.slogan')}
+            <p class="slogan">
+                {$Site->getAttribute('quiqqer.helios.settings.slogan')}
             </p>
+            {/if}
         </header>
         {if $bodyClass == 'homepage'}
         <footer>
-            <a href="" class="button circled scrolly">
+            <a href="{url site=$Site}" class="button circled scrolly">
                 {locale group="quiqqer/template-helios" var="startpage.start.button"}
             </a>
         </footer>

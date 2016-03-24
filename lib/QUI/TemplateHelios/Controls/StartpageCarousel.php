@@ -18,22 +18,22 @@ class StartpageCarousel extends QUI\Control
     /**
      * constructor
      *
-     * @param Array $attributes
+     * @param array $attributes
      */
     public function __construct($attributes = array())
     {
         // default options
         $this->setAttributes(array(
-            'class'     => 'carousel',
-            'limit'     => 10,
+            'class' => 'carousel',
+            'limit' => 10,
             'sitetypes' => false,
-            'nodeName'  => 'section'
+            'nodeName' => 'section'
         ));
 
-        parent::setAttributes($attributes);
+        parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__).'/StartpageCarousel.css'
+            dirname(__FILE__) . '/StartpageCarousel.css'
         );
     }
 
@@ -46,21 +46,36 @@ class StartpageCarousel extends QUI\Control
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
-        $limit = $this->getAttribute('limit');
+        $limit     = $this->getAttribute('limit');
         $sitetypes = $this->getAttribute('sitetypes');
-        $order = $this->getAttribute('order');
 
         if (!$limit) {
             $limit = 2;
         }
 
-        if (!$order) {
-            $order = 'release_from ASC';
+        // order
+        switch ($this->getAttribute('order')) {
+            case 'name ASC':
+            case 'name DESC':
+            case 'title ASC':
+            case 'title DESC':
+            case 'c_date ASC':
+            case 'c_date DESC':
+            case 'd_date ASC':
+            case 'd_date DESC':
+            case 'release_from ASC':
+            case 'release_from DESC':
+                $order = $this->getAttribute('order');
+                break;
+
+            default:
+                $order = 'release_from DESC';
+                break;
         }
 
 
         $children = QUI\Projects\Site\Utils::getSitesByInputList(
-            $this->_getProject(),
+            $this->getProject(),
             $sitetypes,
             array(
                 'limit' => $limit,
@@ -70,10 +85,10 @@ class StartpageCarousel extends QUI\Control
 
         $Engine->assign(array(
             'children' => $children,
-            'this'     => $this
+            'this' => $this
         ));
 
 
-        return $Engine->fetch(dirname(__FILE__).'/StartpageCarousel.html');
+        return $Engine->fetch(dirname(__FILE__) . '/StartpageCarousel.html');
     }
 }
