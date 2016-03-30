@@ -941,6 +941,13 @@ header .icon.circled {
     list-style: none !important;
 }
 
+.quiqqer-breadcrumb:after {
+    clear: both;
+    content: "";
+    display: block;
+    float: none;
+}
+
 #content {
 }
 
