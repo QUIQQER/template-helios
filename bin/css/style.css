@@ -1076,3 +1076,7 @@ header .icon.circled {
     background: url('images/arrow.svg') no-repeat center center;
 }
 
+
+section.content-header {
+    margin-bottom: 1em;
+}

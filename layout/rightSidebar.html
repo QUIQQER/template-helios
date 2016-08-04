@@ -7,6 +7,7 @@
         <div class="row 200%">
 
             <div class="8u" id="content">
+
                 {if !empty( $prefixContentBricks )}
                 {foreach from=$prefixContentBricks item=Brick}
                     {$Brick->create()}
@@ -14,6 +15,21 @@
                 {/if}
 
                 <div style="padding-bottom: 48px; {if !empty ($prefixContentBricks)}padding-top: 48px;{/if}">
+
+                    {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle') ||
+                    $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+                        {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle')}
+                        <header>
+                            <h1 itemprop="name">{$Site->getAttribute('title')}</h1>
+                        </header>
+                        {/if}
+                        {if !isset( $successMessage ) && $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+                        <div class="content-short" itemprop="description">
+                            {$Site->getAttribute('short')|nl2br}
+                        </div>
+                        {/if}
+                    {/if}
+
                     {$Template->getBody()}
                 </div>
 
