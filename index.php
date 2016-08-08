@@ -28,10 +28,10 @@ if ($Project->getConfig('templateHelios.settings.pageBackground')) {
  */
 
 $footerColorBackground = '#2b252c';
-$footerColorFont = '#ffffff';
-$footerColorLink = '#ffffff';
-$headerColorFont = '#ffffff';
-$controlColor = '#ef8376';
+$footerColorFont       = '#ffffff';
+$footerColorLink       = '#ffffff';
+$headerColorFont       = '#ffffff';
+$controlColor          = '#ef8376';
 
 if ($Project->getConfig('templateHelios.settings.controlColor')) {
     $controlColor = $Project->getConfig('templateHelios.settings.controlColor');
@@ -54,12 +54,12 @@ if ($Project->getConfig('templateHelios.settings.headerColorFont')) {
 }
 
 $Engine->assign(array(
-    'controlColor' => $controlColor,
-    'footerColorBackground'  => $footerColorBackground,
-    'footerColorFont'   => $footerColorFont,
-    'footerColorLink'  => $footerColorLink,
-    'headerColorFont'   => $headerColorFont,
-    'Background'   => $Background
+    'controlColor'          => $controlColor,
+    'footerColorBackground' => $footerColorBackground,
+    'footerColorFont'       => $footerColorFont,
+    'footerColorLink'       => $footerColorLink,
+    'headerColorFont'       => $headerColorFont,
+    'Background'            => $Background
 ));
 
 /**
@@ -86,8 +86,8 @@ $Engine->assign(array(
     'headerLogo'      => $headerLogo,
     'headerMenuPos'   => $Project->getConfig('templateHelios.settings.pageMenuPos'),
     'pageHeaderImage' => $Project->getConfig('templateHelios.settings.pageHeaderImage'),
-    'headerFile'      => dirname(__FILE__).'/header.html',
-    'BricksManager' => \QUI\Bricks\Manager::init()
+    'headerFile'      => dirname(__FILE__) . '/header.html',
+    'BricksManager'   => \QUI\Bricks\Manager::init()
 ));
 
 /**
@@ -117,5 +117,5 @@ $Engine->assign('bodyClass', $bodyClass);
 
 $Engine->assign(
     'typeClass',
-    'type-'. str_replace(array('/',':'), '-', $Site->getAttribute('type'))
+    'type-' . str_replace(array('/', ':'), '-', $Site->getAttribute('type'))
 );
