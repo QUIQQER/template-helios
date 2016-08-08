@@ -17,7 +17,6 @@ if ($Project->getConfig('templateHelios.settings.pageBackground')) {
         $Background = QUI\Projects\Media\Utils::getImageByUrl(
             $Project->getConfig('templateHelios.settings.pageBackground')
         );
-
     } catch (QUI\Exception $Exception) {
         \QUI\System\Log::writeRecursive($Exception->getMessage());
     }
