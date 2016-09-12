@@ -1076,7 +1076,14 @@ header .icon.circled {
     background: url('images/arrow.svg') no-repeat center center;
 }
 
-
 section.content-header {
     margin-bottom: 2em;
+}
+
+/*********************************************************************************/
+/* Carousel                                                                      */
+/*********************************************************************************/
+
+.qui-window-popup-buttons button {
+    padding: 0 10px !important;
 }

@@ -53,14 +53,20 @@ require.config({
 });
 
 
-require(['qui/QUI', 'helios-init'], function () {
+require([
+    'qui/QUI',
+    'Locale',
+    'helios-init'
+].append(QUIQQER_LOCALE), function (QUI, QUILocale) {
     "use strict";
+
+    QUILocale.setCurrent(QUIQQER_PROJECT.lang);
 
     var Header = document.getElement('#header'),
         Next   = Header.getNext();
 
     if (!Next.get('id')) {
-        Next.set('id', String.uniqueID ());
+        Next.set('id', String.uniqueID());
     }
 
     Header.getElements('.scrolly').addEvent('click', function (event) {
