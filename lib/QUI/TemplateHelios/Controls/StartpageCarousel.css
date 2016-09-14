@@ -8,6 +8,7 @@
     overflow: hidden;
     padding: 2em 0 2em 0;
     margin-bottom: 0;
+    width: 100%;
 }
 
 .carousel .forward,
@@ -92,8 +93,12 @@
     padding: 0 2em 0 2em;
 }
 
+.carousel {
+    white-space: nowrap;
+}
+
 .carousel article {
-    display: inline-table;
+    display: inline-block;
     width: 18em;
     background: #fff;
     text-align: center;
@@ -111,21 +116,48 @@
 .carousel article.loading {
     opacity: 0;
 }
-
-.carousel article .image {
+.carousel article p {
+    display: inline;
+    float: left;
+}
+.carousel .carousel-extra-div {
     background: #ddd;
+    display: block;
     position: relative;
-    left: -1em;
-    top: 0;
-    width: auto;
-    margin-right: -2em;
-    margin-bottom: 3em;
+    height: 240px;
+    text-align: center;
+    overflow: hidden;
+    left: -20px;
+    width: calc(100% + 40px);
+    margin-bottom:20px;
 }
 
-@media screen and (min-width: 840px) {
-    .carousel article .image {
-        min-height: 240px;
-    }
+.carousel-extra-div a.featured {
+    display: table-cell;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 18em;
+}
+
+a.image.featured img {
+    max-width: 18.1em;
+    max-height: 240px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.image.featured {
+    height: 240px;
+}
+
+a.image.featured:before {
+    display:inline-block;
+    content: "";
+    position:absolute;
+    top: 0; left: 0;
+    text-align: center;
 }
 
 .carousel article p {
@@ -135,3 +167,10 @@
 .carousel article p {
     text-align: center;
 }
+
+@media screen and (min-width: 840px) {
+    .carousel article .image {
+        min-height: 240px;
+    }
+}
+

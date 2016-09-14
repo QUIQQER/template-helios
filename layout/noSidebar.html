@@ -1,16 +1,46 @@
 <div class="wrapper style1">
+
+    {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
+    {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+
     <div class="container">
 
-        <div class="row" id="content">
-            {$Template->getBody()}
-        </div>
+        <div id="content" class="row">
 
-        {brickarea assign="bricks" area="rightSidebar" Site=$Site}
-        {foreach from=$bricks item=Brick}
-        <div class="row">
-            {$Brick->create()}
+            {if !empty( $prefixContentBricks )}
+            {foreach from=$prefixContentBricks item=Brick}
+                {$Brick->create()}
+            {/foreach}
+            {/if}
+
+            <div style="padding-bottom: 48px; {if !empty ($prefixContentBricks)}padding-top: 48px;{/if}">
+
+            {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle') ||
+            $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+            <div class="12u">
+                {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle')}
+                <header class="site-title">
+                    <h1 itemprop="name">{$Site->getAttribute('title')}</h1>
+                </header>
+                {/if}
+                {if !isset( $successMessage ) && $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+                <div class="content-short" itemprop="description">
+                    {$Site->getAttribute('short')|nl2br}
+                </div>
+                {/if}
+            </div>
+            {/if}
+
+            {$Template->getBody()}
+
+            </div>
+            {if !empty( $suffixContentBricks )}
+            {foreach from=$suffixContentBricks item=Brick}
+                {$Brick->create()}
+            {/foreach}
+            {/if}
+
         </div>
-        {/foreach}
 
     </div>
 </div>

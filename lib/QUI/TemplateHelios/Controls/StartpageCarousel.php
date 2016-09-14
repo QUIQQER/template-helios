@@ -17,123 +17,78 @@ class StartpageCarousel extends QUI\Control
 {
     /**
      * constructor
-     * @param Array $attributes
+     *
+     * @param array $attributes
      */
     public function __construct($attributes = array())
     {
         // default options
         $this->setAttributes(array(
-            'class'     => 'carousel',
-            'limit'     => 10,
+            'class' => 'carousel',
+            'limit' => 10,
             'sitetypes' => false,
-            'nodeName'  => 'section'
+            'nodeName' => 'section'
         ));
 
-        parent::setAttributes( $attributes );
+        parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname( __FILE__ ) . '/StartpageCarousel.css'
+            dirname(__FILE__) . '/StartpageCarousel.css'
         );
     }
 
     /**
      * (non-PHPdoc)
+     *
      * @see \QUI\Control::create()
      */
     public function getBody()
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
-        $limit     = $this->getAttribute( 'limit' );
-        $sitetypes = $this->getAttribute( 'sitetypes' );
-        $order     = $this->getAttribute( 'order' );
+        $limit     = $this->getAttribute('limit');
+        $sitetypes = $this->getAttribute('sitetypes');
 
-        if ( !$limit ) {
+        if (!$limit) {
             $limit = 2;
         }
 
-        if ( !$order ) {
-            $order = 'release_from ASC';
+        // order
+        switch ($this->getAttribute('order')) {
+            case 'name ASC':
+            case 'name DESC':
+            case 'title ASC':
+            case 'title DESC':
+            case 'c_date ASC':
+            case 'c_date DESC':
+            case 'd_date ASC':
+            case 'd_date DESC':
+            case 'release_from ASC':
+            case 'release_from DESC':
+                $order = $this->getAttribute('order');
+                break;
+
+            default:
+                $order = 'release_from DESC';
+                break;
         }
 
-        if ( !empty( $sitetypes ) )
-        {
-            $children = $this->_getSitesByList();
 
-        } else
-        {
-            $children = $this->_getProject()->getSites(array(
+        $children = QUI\Projects\Site\Utils::getSitesByInputList(
+            $this->getProject(),
+            $sitetypes,
+            array(
                 'limit' => $limit,
                 'order' => $order
-            ));
-        }
+            )
+        );
 
         $Engine->assign(array(
             'children' => $children,
-            'this'     => $this
+            'this' => $this
         ));
 
 
-        return $Engine->fetch( dirname( __FILE__ ) .'/StartpageCarousel.html' );
-    }
-
-    /**
-     * Return the sites via the site types option
-     *
-     * @return array
-     */
-    protected function _getSitesByList()
-    {
-        $Project   = $this->_getProject();
-        $limit     = $this->getAttribute( 'limit' );
-        $sitetypes = $this->getAttribute( 'sitetypes' );
-        $order     = $this->getAttribute( 'order' );
-
-        if ( !$limit ) {
-            $limit = 2;
-        }
-
-        if ( !$order ) {
-            $order = 'release_from DESC';
-        }
-
-        $sitetypes = explode( ';', $sitetypes );
-
-        $ids   = array();
-        $types = array();
-        $where = array();
-
-        foreach ( $sitetypes as $sitetypeEntry )
-        {
-            if ( is_numeric( $sitetypeEntry ) )
-            {
-                $ids[] = $sitetypeEntry;
-                continue;
-            }
-
-            $types[] = $sitetypeEntry;
-        }
-
-        if ( !empty( $ids ) )
-        {
-            $where['id'] = array(
-                'type' => 'IN',
-                'value' => $ids
-            );
-        }
-
-        if ( !empty( $types ) )
-        {
-            $where['type'] = array(
-                'type' => 'IN',
-                'value' => $types
-            );
-        }
-
-        return $Project->getSites(array(
-            'where_or' => $where,
-            'limit'    => $limit,
-            'order'    => $order
-        ));
+        return $Engine->fetch(dirname(__FILE__) . '/StartpageCarousel.html');
     }
 }

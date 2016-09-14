@@ -1,33 +1,23 @@
 
+{assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
+{assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+
 {strip}
-{object class="\QUI\Bricks\Manager" assign=BricksManager}
-{assign var=bricks value=$BricksManager->getBricksByArea('startpageContent', $Site)}
+{brickarea assign="bricks" area="startpageContent" Site=$Site}
 
 {foreach from=$bricks item=Brick}
 
-    {if $Brick->getType() == 'QUI\TemplateHelios\Controls\StartpageCarousel' ||
-        $Brick->getType() == 'QUI\Bricks\Controls\Banner'
+    {if $Brick->isInstanceOf('QUI\TemplateHelios\Controls\StartpageCarousel') ||
+        $Brick->isInstanceOf('QUI\Bricks\Controls\Banner')
     }
         {$Brick->create()}
-
-    {else if $Brick->getType() == 'QUI\Bricks\Controls\SideBox2'}
-    <div class="wrapper style1">
-        {assign var=_tmp value=$Brick->setAttribute( 'class', 'quiqqer-bricks-sidebox2 container special' )}
-        {assign var=_tmp value=$Brick->setAttribute( 'grid-class-article', '6u special' )}
-        {$Brick->create()}
-    </div>
-
-    {else if $Brick->getType() == 'QUI\Bricks\Controls\SideBox3'}
-    <div class="wrapper style1">
-        {assign var=_tmp value=$Brick->setAttribute( 'class', 'quiqqer-bricks-sidebox3 container special' )}
-        {assign var=_tmp value=$Brick->setAttribute( 'grid-class-article', '4u special' )}
-        {$Brick->create()}
-    </div>
 
     {else}
     <section class="wrapper style1">
         <div class="container">
+            <div class="row">
             {$Brick->create()}
+            </div>
         </div>
     </section>
     {/if}
@@ -35,4 +25,68 @@
 {/foreach}
 {/strip}
 
-{$Template->getBody()}
+
+{if !empty( $prefixContentBricks )}
+    {foreach from=$prefixContentBricks item=Brick}
+        {if $Brick->isInstanceOf('QUI\TemplateHelios\Controls\StartpageCarousel') ||
+            $Brick->isInstanceOf('QUI\Bricks\Controls\Banner')
+        }
+            {$Brick->create()}
+        {else}
+            <section class="wrapper style1">
+                <div class="container">
+                    <div class="row">
+                        {$Brick->create()}
+                    </div>
+                </div>
+            </section>
+        {/if}
+    {/foreach}
+{/if}
+
+
+<div class="wrapper style1">
+    <div class="container">
+        <div class="row" id="content">
+
+            <div style="padding-bottom: 48px; {if !empty ($prefixContentBricks)}padding-top: 48px;{/if}">
+                {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle') ||
+                $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+                <div class="12u">
+                    {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle')}
+                    <header class="site-title">
+                        <h1 itemprop="name">{$Site->getAttribute('title')}</h1>
+                    </header>
+                    {/if}
+                    {if !isset( $successMessage ) && $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+                    <div class="content-short" itemprop="description">
+                        {$Site->getAttribute('short')|nl2br}
+                    </div>
+                    {/if}
+                </div>
+                {/if}
+
+                {$Template->getBody()}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{if !empty( $suffixContentBricks )}
+    {foreach from=$suffixContentBricks item=Brick}
+        {if $Brick->isInstanceOf('QUI\TemplateHelios\Controls\StartpageCarousel') ||
+            $Brick->isInstanceOf('QUI\Bricks\Controls\Banner')
+        }
+            {$Brick->create()}
+        {else}
+            <section class="wrapper style1">
+                <div class="container">
+                    <div class="row">
+                        {$Brick->create()}
+                    </div>
+                </div>
+            </section>
+        {/if}
+    {/foreach}
+{/if}
