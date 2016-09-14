@@ -1090,3 +1090,12 @@ section.content-header {
     margin-top: 10px !important;
     font-size: 14px !important;
 }
+
+
+/*********************************************************************************/
+/* news entry
+/*********************************************************************************/
+
+.type-quiqqer-news-types-news-entry header {
+    margin-bottom: 2em;
+}
