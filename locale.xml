@@ -75,6 +75,15 @@
         </locale>
 
         <!-- start page carousel -->
+        <locale name="bricks.StartpageCarousel.title">
+            <de><![CDATA[Template Helios: Startpage Carousel]]></de>
+            <en><![CDATA[Template Helios: Startpage Carousel]]></en>
+        </locale>
+        <locale name="bricks.StartpageCarousel.description">
+            <de><![CDATA[Inhalt carousel extra für Template Helios entwickelt]]></de>
+            <en><![CDATA[Content carousel for template helios developed]]></en>
+        </locale>
+
         <locale name="StartpageCarousel.limit">
             <de><![CDATA[Angezeigte Seite]]></de>
             <en><![CDATA[Limit the number of pages displayed]]></en>
