@@ -34,8 +34,8 @@
             <en><![CDATA[Template: Helios - Right sidebar]]></en>
         </locale>
         <locale name="area.sidebar.right.description">
-            <de><![CDATA[]]></de>
-            <en><![CDATA[]]></en>
+            <de><![CDATA[Bausteinzone rechts neben dem Inhalt]]></de>
+            <en><![CDATA[Brickarea to the right of the content]]></en>
         </locale>
 
         <locale name="area.headerSuffix.title">
