@@ -207,6 +207,7 @@
         <wysiwyg class="page-content">
             <css src="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic"/>
             <css src="URL_OPT_DIR/quiqqer/template-helios/bin/css/style.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-helios/bin/css/editor.css"/>
         </wysiwyg>
 
     </project>
