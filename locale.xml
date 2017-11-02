@@ -3,14 +3,14 @@
 
     <groups name="quiqqer/template-helios" datatype="php,js">
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Template: Helios]]></de>
-            <en><![CDATA[QUIQQER - Template: Helios]]></en>
-            <pl><![CDATA[QUIQQER - Template: Helios]]></pl>
+            <de><![CDATA[Helios]]></de>
+            <en><![CDATA[Helios]]></en>
+            <pl><![CDATA[Helios]]></pl>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[QUIQQER - Template: Helios]]></de>
-            <en><![CDATA[QUIQQER - Template: Helios]]></en>
-            <pl><![CDATA[QUIQQER - Template: Helios]]></pl>
+            <de><![CDATA[Responsive Helios Template basiert auf http://html5up.net/helios.]]></de>
+            <en><![CDATA[Responsive Helios Template based on http://html5up.net/helios.]]></en>
+            <pl><![CDATA[Responsive Helios Template utworzony na podstawie http://html5up.net/helios.]]></pl>
         </locale>
 
         <locale name="area.footer.title">
