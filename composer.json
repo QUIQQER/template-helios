@@ -1,21 +1,22 @@
 {
     "name": "quiqqer/template-helios",
     "type": "quiqqer-template",
-    "description": "QUIQQER Template - Helios",
+    "description": "Responsive Helios Template based od http://html5up.net/helios",
     "version": "dev-dev",
-    "license": "CCA-3.0",
+    "license": "GPL-3.0+",
 
     "authors": [
         {
             "name": "Henning Leutz",
             "email": "leutz@pcsg.de",
-            "homepage": "http://www.pcsg.de",
+            "homepage": "https://www.pcsg.de",
             "role": "Developer"
         }
     ],
 
     "support": {
-        "email": "support@pcsg.de"
+        "email": "support@pcsg.de",
+        "url": "http:\/\/www.pcsg.de"
     },
 
     "require": {
