@@ -234,7 +234,8 @@
                             event.preventDefault();
 
                             var x = $(this);
-                            var e = x.parent().find('input[name=' + x.attr('name').replace('_fakeformerizefield', '') + ']');
+                            var e = x.parent().find(
+                                'input[name=' + x.attr('name').replace('_fakeformerizefield', '') + ']');
 
                             x.hide();
                             e.show().focus();
@@ -395,9 +396,9 @@
                     parentWidth = $t.parent('.row').width();
                 }
 
-                pos        = 0;
+                pos = 0;
                 rightLimit = (-1 * reelWidth) + parentWidth;
-                leftLimit  = 0;
+                leftLimit = 0;
                 $t._updatePos();
             };
 
@@ -488,7 +489,7 @@
             if (settings.header.fullScreen) {
                 $window.bind('resize.helios', function () {
                     window.setTimeout(function () {
-                        var s  = $header.children('.inner');
+                        var s = $header.children('.inner');
                         var sh = s.outerHeight(), hh = $window.height(), h = Math.ceil((hh - sh) / 2) + 1;
 
                         $header

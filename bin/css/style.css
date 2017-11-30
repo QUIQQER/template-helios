@@ -1096,6 +1096,10 @@ section.content-header {
 /* news entry
 /*********************************************************************************/
 
+#content article {
+    margin-bottom: 80px;
+}
+
 .type-quiqqer-news-types-news-entry header {
     margin-bottom: 2em;
 }

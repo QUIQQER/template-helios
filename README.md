@@ -1,10 +1,13 @@
-Helios Template for the QUIQQER System
+![QUIQQER Calendar](bin/img/Readme.jpg)
+
+QUIQQER Helios
 ========
 
-Responsive Mobile HELIOS Template.
-This template based on http://html5up.net/helios
+Simple but powerful template for blog and posting.
+ 
+This template is based on http://html5up.net/helios.
 
-Packagename:
+Package name:
 
     quiqqer/template-helios
 
@@ -19,28 +22,27 @@ Features
 Installation
 ------------
 
-The Packagename is: quiqqer/template-helios
+The Package name is: quiqqer/template-helios
 
 
 Contribute
 ----------
 
-- Project place: https://dev.quiqqer.com/quiqqer/template-helios
+- Source Code: https://dev.quiqqer.com/quiqqer/template-helios
 - Issue Tracker: https://dev.quiqqer.com/quiqqer/template-helios/issues
-- Source Code: https://dev.quiqqer.com/quiqqer/template-helios/tree/master
 
 
 Support
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+If you have found a bug or want to make improvements,
+then you can write an e-mail to support@pcsg.de.
 
 
 License
 -------
 
-The project is licensed under the CCA 3.0 license.
+GPL-3.0+
 
 
 Credits:
