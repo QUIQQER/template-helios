@@ -10,6 +10,11 @@
 
         <image src="URL_OPT_DIR/quiqqer/template-helios/bin/img/Logo.jpg"/>
 
+        <preview>
+            <image src="URL_OPT_DIR/quiqqer/template-helios/bin/img/preview/Template_Helios.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/template-helios/bin/img/preview/Template_Helios_2.jpg"/>
+        </preview>
+
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>

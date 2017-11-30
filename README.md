@@ -1,8 +1,11 @@
+![QUIQQER Calendar](bin/img/Readme.jpg)
+
 QUIQQER Helios
 ========
 
-Responsive Mobile HELIOS Template.
-This template based on http://html5up.net/helios
+Simple but powerful template for blog and posting.
+ 
+This template is based on http://html5up.net/helios.
 
 Package name:
 

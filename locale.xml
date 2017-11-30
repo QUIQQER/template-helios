@@ -8,9 +8,9 @@
             <pl><![CDATA[Helios]]></pl>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[Responsive Helios Template basiert auf http://html5up.net/helios.]]></de>
-            <en><![CDATA[Responsive Helios Template based on http://html5up.net/helios.]]></en>
-            <pl><![CDATA[Responsive Helios Template utworzony na podstawie http://html5up.net/helios.]]></pl>
+            <de><![CDATA[Einfaches und modernes Template für Blog-Seiten.]]></de>
+            <en><![CDATA[Simple but powerful template for blog and posting.]]></en>
+            <pl><![CDATA[Prosty i nowoczesny szablon dla miłośników blogowania.]]></pl>
         </locale>
 
         <locale name="area.footer.title">
