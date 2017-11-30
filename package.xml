@@ -8,7 +8,7 @@
             <locale group="quiqqer/template-helios" var="package.description"/>
         </description>
 
-        <image src="URL_OPT_DIR/quiqqer/template-helios/bin/img/Logo.jpg"/>
+        <image src="URL_OPT_DIR/quiqqer/template-helios/bin/img/Logo.png"/>
 
         <preview>
             <image src="URL_OPT_DIR/quiqqer/template-helios/bin/img/preview/Template_Helios.jpg"/>
