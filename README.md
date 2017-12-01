@@ -1,4 +1,4 @@
-![QUIQQER Calendar](bin/img/Readme.jpg)
+![QUIQQER Helios](bin/img/Readme.jpg)
 
 QUIQQER Helios
 ========
