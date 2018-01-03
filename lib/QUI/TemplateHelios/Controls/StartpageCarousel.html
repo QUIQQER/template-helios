@@ -6,7 +6,8 @@
         <div class="carousel-extra-div">
 
             {assign var=url value=$Child->getUrlRewritten()}
-            {if $Child->getParent()->getAttribute('quiqqer.portfolio.settings.portfolioNoPopup') == false}
+            {if $Child->getParent()->getAttribute('quiqqer.portfolio.settings.portfolioNoPopup') == false &&
+                $Child->getParent()->getAttribute('quiqqer.portfolio.settings.portfolioNoPopup') !== false}
                 {assign var=url value="`$Child->getParent()->getUrlRewritten()`#`$Child->getId()`"}
             {/if}
 
