@@ -4,13 +4,20 @@
     {foreach from=$children item=Child}
     <article>
         <div class="carousel-extra-div">
-            <a href="{url site=$Child}" class="image featured">
+
+            {assign var=url value=$Child->getUrlRewritten()}
+            {if $Child->getParent()->getAttribute('quiqqer.portfolio.settings.portfolioNoPopup') == false &&
+                $Child->getParent()->getAttribute('quiqqer.portfolio.settings.portfolioNoPopup') !== false}
+                {assign var=url value="`$Child->getParent()->getUrlRewritten()`#`$Child->getId()`"}
+            {/if}
+
+            <a href="{$url}" class="image featured">
                 {image src=$Child->getAttribute('image_site') width=400 class="carousel-image"}
             </a>
             </div>
         <header>
             <h3>
-                <a href="{url site=$Child}">
+                <a href="{$url}">
                     {$Child->getAttribute('title')}
                 </a>
             </h3>
