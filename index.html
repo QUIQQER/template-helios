@@ -10,6 +10,8 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="{$Project->getAttribute('lang')}"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="{$Project->getAttribute('lang')}"> <!--<![endif]-->
 <head>
+    {template_event name="quiqqer::template::header::begin"}
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1" />
 
@@ -143,8 +145,11 @@
 
     </style>
 
+    {template_event name="quiqqer::template::header::end"}
 </head>
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}">
+
+{template_event name="quiqqer::template::body::begin"}
 
 {if $Project->getConfig('templateHelios.settings.pageMaxWidth')}
     <div class="page" style="margin: 0 auto; max-width: {$Project->getConfig('templateHelios.settings.pageMaxWidth')}px">
@@ -221,6 +226,8 @@
 
 <script src="{$URL_TPL_DIR}bin/js/jquery.min.js"></script>
 <script src="{$URL_TPL_DIR}bin/js/helios.js"></script>
+
+{template_event name="quiqqer::template::body::end"}
 
 </body>
 </html>
