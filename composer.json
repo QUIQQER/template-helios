@@ -1,33 +1,28 @@
 {
-    "name": "quiqqer/template-helios",
+    "name": "quiqqer\/template-helios",
     "type": "quiqqer-template",
-    "description": "Simple but powerful template for blog and posting based on http://html5up.net/helios",
-    "version": "dev-dev",
+    "description": "Simple but powerful template for blog and posting based on http:\/\/html5up.net\/helios",
     "license": "GPL-3.0+",
-
     "authors": [
         {
             "name": "Henning Leutz",
             "email": "leutz@pcsg.de",
-            "homepage": "https://www.pcsg.de",
+            "homepage": "https:\/\/www.pcsg.de",
             "role": "Developer"
         }
     ],
-
     "support": {
         "email": "support@pcsg.de",
         "url": "http:\/\/www.pcsg.de"
     },
-
     "require": {
-        "quiqqer/quiqqer": "*@dev",
-        "quiqqer/bricks": "*",
-        "quiqqer/sitetypes": "1.*|dev-master|dev-dev"
+        "quiqqer\/quiqqer": "*@dev",
+        "quiqqer\/bricks": "*",
+        "quiqqer\/sitetypes": "1.*|dev-master|dev-dev"
     },
-
     "autoload": {
         "psr-0": {
-            "QUI": "lib/"
+            "QUI": "lib\/"
         }
     }
 }
