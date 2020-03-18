@@ -1,4 +1,3 @@
-
 <!doctype html>
 <!--
     Helios by HTML5 UP
@@ -163,14 +162,14 @@
     {foreach $headerSuffix as $Brick}
         {if $Brick->getType() == 'QUI\Controls\Breadcrumb'}
             <div class="container wrapper-mini">
-                <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
+                <section class="page-box-prefix-div">
                     {$Brick->create()}
                 </section>
             </div>
         {else}
             <div class="wrapper">
                 <div class="container">
-                    <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
+                    <section class="page-box-prefix-div">
                         {$Brick->create()}
                     </section>
                 </div>
@@ -186,7 +185,7 @@
     {foreach $footerPrefix as $Brick}
     <div class="container">
         <div class="">
-            <section class="page-box-suffix-div {$Brick->getAttribute('classes')}">
+            <section class="page-box-suffix-div">
                 {$Brick->create()}
             </section>
         </div>
