@@ -14,7 +14,7 @@
             >
         <header>
 
-            <a href="{url id=1}" id="logo" title="{$headerText|escape:" html"}" itemprop="url">
+            <a href="{url id=1}" id="logo" title="{$headerText|escape:'html'}" itemprop="url">
             {if $headerLogo}
                 {image src=$headerLogo width=400 itemprop="logo"}
             {else}
